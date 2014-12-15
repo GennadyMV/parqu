@@ -1,6 +1,6 @@
-package rage.parku;
+package rage.parqu;
 
-import rage.parku.Application;
+import rage.parqu.Application;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.web.WebAppConfiguration;

@@ -41,7 +41,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <start-class>rage.parkour.Application</start-class>
+        <start-class>rage.parku.Application</start-class>
         <java.version>1.7</java.version>
     </properties>
 

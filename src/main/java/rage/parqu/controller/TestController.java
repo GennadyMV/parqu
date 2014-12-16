@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package rage.controller;
+package rage.parqu.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

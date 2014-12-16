@@ -14,7 +14,7 @@ public class QuestionController {
     private QuestionService questionService;
     
     @RequestMapping("questions/{id}")
-    public Question test(@PathVariable Long id){
+    public Question test(@PathVariable Integer id){
         return questionService.createNewQuestion(id);
     }
     

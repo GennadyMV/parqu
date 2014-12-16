@@ -10,4 +10,8 @@ public class Randomizer {
         return random.nextInt(200) - 50;
     }
 
+    public static Operator randomOperator() {
+        return Operator.values()[random.nextInt(Operator.values().length)];
+    }
+
 }

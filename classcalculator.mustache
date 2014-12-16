@@ -1,0 +1,20 @@
+public class {{name}} {
+
+	private {{type}} {{attributeName}};
+	
+	public {{name}}({{type}} {{attributeName}}){
+		this.{{attributeName}} = {{attributeName}};
+	}
+
+	public {{type}} {{functionName}}({{type}} {{parameterName}}){
+		return this.{{attributeName}} {{operator}} {{parameterName}}
+	}
+
+}
+
+--------------------------------
+
+public static void main(String[] args){
+	{{name}} thing = new {{name}}({{value}});
+	System.out.println(functionName({{modifier}}));
+}

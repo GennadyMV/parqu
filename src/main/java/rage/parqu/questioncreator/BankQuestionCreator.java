@@ -33,7 +33,7 @@ public class BankQuestionCreator implements QuestionCreator{
         question.setCode(writer.getBuffer().toString());
         question.setCorrectAnswer(determineRightAnswer(cash,value,border));
         question.setQuestionText("What is the printed number?");
-        question.setAnswers("cash", "" + (cash + value), "" + (value + border), "" + cash);
+        question.setAnswers("" + (cash + border), "" + (cash + value), "" + (value + border), "" + cash);
         
         return question;
     }

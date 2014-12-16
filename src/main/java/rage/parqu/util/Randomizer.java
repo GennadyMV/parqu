@@ -7,7 +7,7 @@ public class Randomizer {
     private static Random random = new Random();
     
     public static int randomIntegerParameter(){
-        return random.nextInt(200) - 100;
+        return random.nextInt(200) - 50;
     }
 
 }

@@ -29,16 +29,16 @@ public abstract class QuestionCreator {
         return question;
     }
     
-    abstract void randomizeParameters();
-    abstract HashMap<String, Object> setUpScope();
-    abstract Question setUpQuestionAndAnswers();
-    abstract String determineRightAnswer();
+    protected abstract void randomizeParameters();
+    protected abstract HashMap<String, Object> setUpScope();
+    protected abstract Question setUpQuestionAndAnswers();
+    protected abstract String determineRightAnswer();
 
-    public String getTemplateName() {
+    protected String getTemplateName() {
         return templateName;
     }
 
-    public void setTemplateName(String templateName) {
+    protected void setTemplateName(String templateName) {
         this.templateName = templateName;
     }
 }

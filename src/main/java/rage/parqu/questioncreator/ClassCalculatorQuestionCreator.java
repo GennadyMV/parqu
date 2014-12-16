@@ -8,11 +8,6 @@ import static rage.parqu.util.Randomizer.randomOperator;
 
 public class ClassCalculatorQuestionCreator extends QuestionCreator{
     
-    private String name = "Calculator";
-    private String type = "int";
-    private String attributeName = "value";
-    private String functionName = "modify";
-    private String parameterName = "modifier";
     private Operator operator;
     private int modifier;
     private int value;
@@ -22,20 +17,15 @@ public class ClassCalculatorQuestionCreator extends QuestionCreator{
     }
 
     @Override
-    void randomizeParameters() {
+    protected void randomizeParameters() {
         modifier = randomIntegerParameter();
         value = randomIntegerParameter();
         operator = randomOperator();
     }
 
     @Override
-    HashMap<String, Object> setUpScope() {
+    protected HashMap<String, Object> setUpScope() {
         HashMap<String, Object> scopes = new HashMap<>();
-        scopes.put("name", name);
-        scopes.put("type", type);
-        scopes.put("attributeName", attributeName); 
-        scopes.put("functionName", functionName);
-        scopes.put("parameterName", parameterName);
         scopes.put("operator", operator.toString());
         scopes.put("value", value);
         scopes.put("modifier", modifier);
@@ -44,14 +34,14 @@ public class ClassCalculatorQuestionCreator extends QuestionCreator{
     }
 
     @Override
-    Question setUpQuestionAndAnswers() {
+    protected Question setUpQuestionAndAnswers() {
         Question question = new Question();
         question.setQuestionText("What is the printed number?");
         question.setAnswers("" + (value + modifier), "" + (modifier - value), "" + (value - modifier), "" + value);
         return question;    }
 
     @Override
-    String determineRightAnswer() {
+    protected String determineRightAnswer() {
         if(operator == Operator.PLUS){
             return "" + (value + modifier);
         } else if (operator == Operator.MINUS){

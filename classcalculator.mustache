@@ -1,13 +1,13 @@
-public class {{name}} {
+public class Calculator {
 
-	private {{type}} {{attributeName}};
+	private int value;
 	
-	public {{name}}({{type}} {{attributeName}}){
-		this.{{attributeName}} = {{attributeName}};
+	public Calculator(int value){
+		this.value = value;
 	}
 
-	public {{type}} {{functionName}}({{type}} {{parameterName}}){
-		return this.{{attributeName}} {{operator}} {{parameterName}}
+	public int modify(int modifier){
+		return this.value {{operator}} modifier
 	}
 
 }
@@ -15,6 +15,6 @@ public class {{name}} {
 --------------------------------
 
 public static void main(String[] args){
-	{{name}} thing = new {{name}}({{value}});
+	Calculator thing = new Calculator({{value}});
 	System.out.println(functionName({{modifier}}));
 }

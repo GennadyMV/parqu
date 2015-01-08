@@ -2,6 +2,7 @@ package rage.parqu.domain;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 
 public class Question {
     
@@ -9,6 +10,7 @@ public class Question {
     private String questionText;
     private String code;
     private String correctAnswer;
+    private UUID answerID;
 
     public Question() {
     }
@@ -18,6 +20,7 @@ public class Question {
         this.questionText = questionText;
         this.code = code;
         this.correctAnswer = answer;
+        answerID = UUID.randomUUID();
     }
     
     public List<String> getAnswers() {
@@ -55,7 +58,14 @@ public class Question {
     public void setCorrectAnswer(String correctAnswer) {
         this.correctAnswer = correctAnswer;
     }
-    
-    
+
+    public UUID getAnswerID() {
+        return answerID;
+    }
+
+    public void setAnswerID(UUID answerID) {
+        this.answerID = answerID;
+    }
+
     
 }

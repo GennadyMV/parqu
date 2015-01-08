@@ -13,14 +13,7 @@ public class Question {
     private UUID answerID;
 
     public Question() {
-    }
-
-    public Question(List<String> answers, String questionText, String code, String answer) {
-        this.answers = answers;
-        this.questionText = questionText;
-        this.code = code;
-        this.correctAnswer = answer;
-        answerID = UUID.randomUUID();
+        this.answerID = UUID.randomUUID();
     }
     
     public List<String> getAnswers() {

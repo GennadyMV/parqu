@@ -24,6 +24,9 @@ public class QuestionService {
     
     public Question createNewQuestion(Integer id){
         Question newQuestion = creators.get(id).createQuestion();
+        System.out.println(newQuestion.getAnswerID());
+        System.out.println(newQuestion);
+        
         questionsOnHold.put(newQuestion.getAnswerID(), newQuestion);
         
         return newQuestion;

@@ -6,7 +6,7 @@ public class CheckRequest {
     
     private Integer id;
     private UUID answerID;
-    private Integer answer;
+    private String answer;
 
     public int getId() {
         return id;
@@ -24,11 +24,11 @@ public class CheckRequest {
         this.answerID = answerID;
     }
 
-    public int getAnswer() {
+    public String getAnswer() {
         return answer;
     }
 
-    public void setAnswer(int answer) {
+    public void setAnswer(String answer) {
         this.answer = answer;
     }
 }

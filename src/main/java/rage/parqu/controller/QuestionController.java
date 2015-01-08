@@ -23,7 +23,6 @@ public class QuestionController {
     
     @RequestMapping(method = RequestMethod.POST, value="questions")
     public boolean checkAnswer(@RequestBody CheckRequest check){
-        System.out.println(check);
-        return true;
+        return questionService.checkAnswerFromMap(check);
     }
 }

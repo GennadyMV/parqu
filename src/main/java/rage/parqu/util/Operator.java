@@ -11,6 +11,7 @@ public enum Operator {
         operatorSign = s;
     }
 
+    @Override
     public String toString(){
        return operatorSign;
     }

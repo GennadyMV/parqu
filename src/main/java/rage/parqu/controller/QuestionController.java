@@ -1,7 +1,9 @@
 package rage.parqu.controller;
 
+import rage.parqu.domain.CheckRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,11 +21,9 @@ public class QuestionController {
         return questionService.createNewQuestion(id);
     }
     
-    @RequestMapping(method = RequestMethod.POST, value="questions/{id}/{questionID}")
-    public boolean checkAnswer(@PathVariable Integer id, @PathVariable Integer questionID){
-        System.out.println(id);
-        System.out.println(questionID);
-        
+    @RequestMapping(method = RequestMethod.POST, value="questions")
+    public boolean checkAnswer(@RequestBody CheckRequest check){
+        System.out.println(check);
         return true;
     }
 }

@@ -1,5 +1,6 @@
 package rage.parqu.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
@@ -9,6 +10,7 @@ public class Question {
     private List<String> answers;
     private String questionText;
     private String code;
+    @JsonIgnore
     private String correctAnswer;
     private UUID answerID;
 

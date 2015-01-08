@@ -4,16 +4,16 @@ import java.util.UUID;
 
 public class CheckRequest {
     
-    private Integer id;
+    private int studentNumber;
     private UUID answerID;
     private String answer;
 
-    public int getId() {
-        return id;
+    public int getStudentNumber() {
+        return studentNumber;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setStudentNumber(int studentNumber) {
+        this.studentNumber = studentNumber;
     }
 
     public UUID getAnswerID() {

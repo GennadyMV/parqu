@@ -2,8 +2,8 @@ package rage.parqu.util;
 
 public enum Operator {
     
-    PLUS ("+="),
-    MINUS ("-=");
+    PLUS ("+"),
+    MINUS ("-");
     
     private final String operatorSign;
     
@@ -11,7 +11,6 @@ public enum Operator {
         operatorSign = s;
     }
 
-    @Override
     public String toString(){
        return operatorSign;
     }

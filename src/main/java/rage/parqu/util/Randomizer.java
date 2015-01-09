@@ -7,7 +7,11 @@ public class Randomizer {
     private static final Random random = new Random();
     
     public static int randomIntegerParameter(){
-        return random.nextInt(200) - 50;
+        return random.nextInt(100) - 25;
+    }
+    
+    public static int randomSmallPositiveInteger(){
+        return 1 + random.nextInt(10);
     }
 
     public static Operator randomOperator() {

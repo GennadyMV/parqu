@@ -25,6 +25,7 @@ public abstract class QuestionCreator {
         Question question = setUpQuestionAndAnswers();
         question.setCode(writer.getBuffer().toString());
         question.setCorrectAnswer(determineRightAnswer());
+        question.setParameters(scopes.values().toArray());
         
         return question;
     }

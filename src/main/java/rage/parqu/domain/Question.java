@@ -13,6 +13,8 @@ public class Question {
     @JsonIgnore
     private String correctAnswer;
     private UUID answerID;
+    @JsonIgnore
+    private Object[] parameters;
 
     public Question() {
         this.answerID = UUID.randomUUID();
@@ -62,5 +64,12 @@ public class Question {
         this.answerID = answerID;
     }
 
-    
+    public Object[] getParameters() {
+        return parameters;
+    }
+
+    public void setParameters(Object[] parameters) {
+        this.parameters = parameters;
+    }
+
 }

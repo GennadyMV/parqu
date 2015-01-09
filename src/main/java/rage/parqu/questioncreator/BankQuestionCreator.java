@@ -2,7 +2,7 @@ package rage.parqu.questioncreator;
 
 import java.util.HashMap;
 import rage.parqu.domain.Question;
-import static rage.parqu.util.Randomizer.randomIntegerParameter;
+import static rage.parqu.util.Randomizer.randomLargePositiveInteger;
 
 public class BankQuestionCreator extends QuestionCreator{
     
@@ -16,9 +16,9 @@ public class BankQuestionCreator extends QuestionCreator{
 
     @Override
     protected void randomizeParameters() {
-        cash = randomIntegerParameter();
-        value = randomIntegerParameter();
-        border = randomIntegerParameter();
+        cash = randomLargePositiveInteger();
+        value = randomLargePositiveInteger();
+        border = randomLargePositiveInteger();
     }  
     
     @Override

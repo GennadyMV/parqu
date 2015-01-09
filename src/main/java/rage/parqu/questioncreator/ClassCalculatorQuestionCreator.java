@@ -3,7 +3,7 @@ package rage.parqu.questioncreator;
 import java.util.HashMap;
 import rage.parqu.domain.Question;
 import rage.parqu.util.Operator;
-import static rage.parqu.util.Randomizer.randomIntegerParameter;
+import static rage.parqu.util.Randomizer.randomLargePositiveInteger;
 import static rage.parqu.util.Randomizer.randomOperator;
 
 public class ClassCalculatorQuestionCreator extends QuestionCreator{
@@ -18,8 +18,8 @@ public class ClassCalculatorQuestionCreator extends QuestionCreator{
 
     @Override
     protected void randomizeParameters() {
-        modifier = randomIntegerParameter();
-        value = randomIntegerParameter();
+        modifier = randomLargePositiveInteger();
+        value = randomLargePositiveInteger();
         operator = randomOperator();
     }
 

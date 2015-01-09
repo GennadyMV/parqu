@@ -6,8 +6,8 @@ public class Randomizer {
     
     private static final Random random = new Random();
     
-    public static int randomIntegerParameter(){
-        return random.nextInt(100) - 25;
+    public static int randomLargePositiveInteger(){
+        return 1 + random.nextInt(100);
     }
     
     public static int randomSmallPositiveInteger(){

@@ -40,6 +40,8 @@ public class QuestionService {
         if (question == null) {
             return false;
         }
+        
+        // Joka tuhannes kysely poista liian vanhat.
 
         boolean correct = question.getCorrectAnswer().equals(check.getAnswer());
         answerRepository.save(new DbAnswer(check.getStudentNumber(), correct, question.getParameters(), check.getQuestionID(), check.getAnswer()));

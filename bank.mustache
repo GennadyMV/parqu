@@ -2,10 +2,10 @@ public static void main(String[] args){
 	int cash = {{cash}};
 	int amount = {{value}};
 	if(amount > {{border}}){
-		cash += {{border}};
-		amount -= {{border}};
+		cash = cash + {{border}};
+		amount = amount - {{border}};
 	} else {
-		cash += amount;
+		cash = cash + amount;
 		amount = 0;
 	}
         System.out.println(cash);

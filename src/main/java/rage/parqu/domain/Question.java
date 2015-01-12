@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
+import org.joda.time.DateTime;
 
 public class Question {
     
@@ -15,9 +16,12 @@ public class Question {
     private UUID answerID;
     @JsonIgnore
     private Object[] parameters;
+    @JsonIgnore
+    private final DateTime timeStamp;
 
     public Question() {
         this.answerID = UUID.randomUUID();
+        this.timeStamp = new DateTime();
     }
     
     public List<String> getAnswers() {
@@ -72,4 +76,7 @@ public class Question {
         this.parameters = parameters;
     }
 
+    public DateTime getTimeStamp() {
+        return timeStamp;
+    }
 }

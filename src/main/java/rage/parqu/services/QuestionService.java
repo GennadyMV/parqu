@@ -1,9 +1,13 @@
 package rage.parqu.services;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
+import org.joda.time.DateTime;
+import org.joda.time.Hours;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import rage.parqu.domain.CheckRequest;
@@ -19,6 +23,7 @@ public class QuestionService {
     private final Map<UUID, Question> questionsOnHold;
     @Autowired
     private AnswerRepository answerRepository;
+    private int cleanupCounter = 0;
 
     public QuestionService() {
         this.questionsOnHold = new ConcurrentHashMap<>();
@@ -36,18 +41,42 @@ public class QuestionService {
     }
 
     public boolean checkAndSave(CheckRequest check) {
+        cleanupCounter++;
+        if(cleanupCounter > 10){
+            removeUnansweredQuestions();
+            cleanupCounter = 0;
+        }
+        
         Question question = questionsOnHold.get(check.getAnswerID());
         if (question == null) {
             return false;
         }
-        
-        // Joka tuhannes kysely poista liian vanhat.
 
         boolean correct = question.getCorrectAnswer().equals(check.getAnswer());
         answerRepository.save(new DbAnswer(check.getStudentNumber(), correct, question.getParameters(), check.getQuestionID(), check.getAnswer()));
         if (correct) {
             questionsOnHold.remove(check.getAnswerID());
         }
+        
         return correct;
+    }
+
+    private void removeUnansweredQuestions() {
+        List<UUID> toRemove = new ArrayList();
+        DateTime now = new DateTime();
+        for (Question question : questionsOnHold.values()) {
+            if(questionIsOld(question.getTimeStamp(), now)){
+                toRemove.add(question.getAnswerID());
+            }
+        }
+        for (UUID uuid : toRemove) {
+            questionsOnHold.remove(uuid);
+        }
+    }
+    
+    private boolean questionIsOld(DateTime timeStamp, DateTime now) {
+        Hours hours = Hours.hoursBetween(timeStamp, now);
+        
+        return hours.getHours() > 4;
     }
 }

@@ -17,6 +17,9 @@ public class SimpleInsertQuestionCreator extends QuestionCreator{
     protected void randomizeParameters() {
         first = randomSmallPositiveInteger();
         second = randomSmallPositiveInteger();
+        if(first == second){
+            randomizeParameters();
+        }
     }
 
     @Override

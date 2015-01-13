@@ -20,6 +20,9 @@ public class SimpleCalculationQuestionCreator extends QuestionCreator{
     protected void randomizeParameters() {
         first = randomSmallPositiveInteger();
         second = randomSmallPositiveInteger();
+        if(first == second){
+            randomizeParameters();
+        }
         operator = randomOperator();
     }
 

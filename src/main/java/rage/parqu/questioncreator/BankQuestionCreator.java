@@ -24,7 +24,7 @@ public class BankQuestionCreator extends QuestionCreator{
     @Override
     protected Question setUpQuestionAndAnswers() {
         Question question = new Question();
-        question.setQuestionText("What is the printed number?");
+        question.setQuestionText("Mikä numero tulostetaan?");
         question.setAnswers("" + (cash + border), "" + (cash + value), "" + (value + border), "" + cash);
         return question;
     }

@@ -29,7 +29,8 @@ public class QuestionService {
         this.questionsOnHold = new ConcurrentHashMap<>();
         creators.put(1, new BankQuestionCreator());
         creators.put(2, new ClassCalculatorQuestionCreator());
-        creators.put(3, new SimplePrintQuestionCreator());
+        creators.put(3, new SimpleInsertQuestionCreator());
+        creators.put(4, new SimpleCalculationQuestionCreator());
     }
 
     public Question createNewQuestion(Integer id) {
@@ -77,6 +78,6 @@ public class QuestionService {
     private boolean questionIsOld(DateTime timeStamp, DateTime now) {
         Hours hours = Hours.hoursBetween(timeStamp, now);
         
-        return hours.getHours() > 4;
+        return hours.getHours() > 24;
     }
 }

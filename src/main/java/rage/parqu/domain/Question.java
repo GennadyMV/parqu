@@ -2,6 +2,7 @@ package rage.parqu.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 import org.joda.time.DateTime;
@@ -29,11 +30,12 @@ public class Question {
     }
 
     public void setAnswers(List<String> answers) {
+        Collections.shuffle(answers);
         this.answers = answers;
     }
     
     public void setAnswers(String... answers) {
-        this.answers = Arrays.asList(answers);
+        this.setAnswers(Arrays.asList(answers));
     }
 
     public String getQuestionText() {

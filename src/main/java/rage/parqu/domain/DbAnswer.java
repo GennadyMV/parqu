@@ -8,7 +8,7 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 @Entity
 public class DbAnswer extends AbstractPersistable<Long> {
         
-    private int studentNumber;
+    private String studentID;
     private boolean correct;
     private String questionParameters;
     private int questionID;
@@ -17,20 +17,20 @@ public class DbAnswer extends AbstractPersistable<Long> {
     public DbAnswer() {
     }
 
-    public DbAnswer(int studentNumber, boolean correct, Object[] parameters, int questionID, String answer) {
-        this.studentNumber = studentNumber;
+    public DbAnswer(String studentID, boolean correct, Object[] parameters, int questionID, String answer) {
+        this.studentID = studentID;
         this.correct = correct;
         this.questionParameters = Arrays.toString(parameters);
         this.questionID = questionID;
         this.answer = answer;
     }
 
-    public int getStudentNumber() {
-        return studentNumber;
+    public String getStudentID() {
+        return studentID;
     }
 
-    public void setStudentNumber(int studentNumber) {
-        this.studentNumber = studentNumber;
+    public void setStudentID(String studentID) {
+        this.studentID = studentID;
     }
 
     public boolean isCorrect() {

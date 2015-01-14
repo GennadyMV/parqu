@@ -4,19 +4,19 @@ import java.util.UUID;
 
 public class CheckRequest {
     
-    private int studentNumber;
+    private String studentID;
     private UUID answerID;
     private String answer;
     private int questionID;
 
-    public int getStudentNumber() {
-        return studentNumber;
+    public String getStudentID() {
+        return studentID;
     }
 
-    public void setStudentNumber(int studentNumber) {
-        this.studentNumber = studentNumber;
+    public void setStudentID(String studentID) {
+        this.studentID = studentID;
     }
-
+    
     public UUID getAnswerID() {
         return answerID;
     }

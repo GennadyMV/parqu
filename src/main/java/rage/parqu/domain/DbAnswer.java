@@ -1,7 +1,6 @@
 package rage.parqu.domain;
 
 import java.util.Arrays;
-import java.util.List;
 import javax.persistence.Entity;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 

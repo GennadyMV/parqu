@@ -33,6 +33,8 @@ public class QuestionService {
         creators.put(4, new SimpleCalculationQuestionCreator());
         creators.put(5, new StringsAndNumbersQuestionCreator());
         creators.put(6, new SimpleWhileQuestionCreator());
+        creators.put(7, new WhileMethodQuestionCreator());
+        creators.put(8, new WhileMethodPrintVersionQuestionCreator());
     }
 
     public Question createNewQuestion(Integer id) {

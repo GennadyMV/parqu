@@ -7,7 +7,7 @@ public class WhileMethodPrintVersionQuestionCreator extends WhileMethodQuestionC
     @Override
     protected Question setUpQuestionAndAnswers() {
         Question question = new Question();
-        question.setQuestionText("Mikä on tulostettu muuttujan 'eka' arvo?");
+        question.setQuestionText("Mitä ohjelma tulostaa viimeiselle riville?");
         question.setAnswers("" + first, "" + second, "" + ((first + second)/2), "" + (((first + second)/2) - first));
         return question;       
     }

@@ -58,7 +58,7 @@ public class QuestionService {
         }
 
         boolean correct = question.getCorrectAnswer().equals(check.getAnswer());
-        answerRepository.save(new DbAnswer(check.getStudentID(), correct, question.getParameters(), check.getQuestionID(), check.getAnswer()));
+        answerRepository.save(new DbAnswer(check.getStudentID(), correct, question.getParameters(), check.getQuestionID(), check.getAnswer(), question.getTimeStamp()));
         if (correct) {
             questionsOnHold.remove(check.getAnswerID());
         }

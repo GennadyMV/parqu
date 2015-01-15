@@ -42,7 +42,6 @@ public class StringsAndNumbersQuestionCreator extends QuestionCreator{
 
     @Override
     protected String determineRightAnswer() {
-        System.out.println("Right answer is " + string + first + second);
         return string + first + second;
     }
     

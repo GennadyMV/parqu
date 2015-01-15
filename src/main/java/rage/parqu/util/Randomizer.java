@@ -14,6 +14,10 @@ public class Randomizer {
     public static int randomSmallPositiveInteger(){
         return 1 + random.nextInt(10);
     }
+    
+    public static int randomSmallNegativeInteger(){
+        return 0 - random.nextInt(2);
+    }
 
     public static Operator randomOperator() {
         return Operator.values()[random.nextInt(Operator.values().length)];

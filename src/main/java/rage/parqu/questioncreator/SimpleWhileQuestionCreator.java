@@ -2,6 +2,7 @@ package rage.parqu.questioncreator;
 
 import java.util.HashMap;
 import rage.parqu.domain.Question;
+import static rage.parqu.util.Randomizer.randomSmallNegativeInteger;
 import static rage.parqu.util.Randomizer.randomSmallPositiveInteger;
 
 public class SimpleWhileQuestionCreator extends QuestionCreator{
@@ -41,7 +42,8 @@ public class SimpleWhileQuestionCreator extends QuestionCreator{
     protected Question setUpQuestionAndAnswers() {
         Question question = new Question();
         question.setQuestionText("Kuinka monta kertaa tulostetaan \"Tööt?\"");
-        question.setAnswers("" + (second - first), "" + ((second - first) + 1), "" + 0, "" + ((second - first) - 1), "" + ((second - first) + 2));
+        int range = randomSmallNegativeInteger();
+        question.setAnswers( "" + ((second - first) + (range + 4)), "" + ((second - first) + range), "" + ((second - first) + (range + 2)), "" + ((second - first) + (range + 1)), "" + ((second - first) + (range + 3)));
         return question;       
     }
 

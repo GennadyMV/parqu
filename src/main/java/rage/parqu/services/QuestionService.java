@@ -31,6 +31,7 @@ public class QuestionService {
         creators.put(2, new ClassCalculatorQuestionCreator());
         creators.put(3, new SimpleInsertQuestionCreator());
         creators.put(4, new SimpleCalculationQuestionCreator());
+        creators.put(5, new StringsAndNumbersQuestionCreator());
     }
 
     public Question createNewQuestion(Integer id) {

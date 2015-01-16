@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
+import javax.transaction.Transactional;
 import org.joda.time.DateTime;
 import org.joda.time.Hours;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,6 +46,7 @@ public class QuestionService {
         return newQuestion;
     }
 
+    @Transactional
     public boolean checkAndSave(CheckRequest check) {
         cleanupCounter++;
         if(cleanupCounter > 10){

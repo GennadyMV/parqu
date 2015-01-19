@@ -35,6 +35,6 @@ public class Randomizer {
     
     public static String randomString() {
         return strings[random.nextInt(strings.length)];
-    } 
-
+    }
+    
 }

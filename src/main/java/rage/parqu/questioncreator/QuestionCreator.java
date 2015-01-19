@@ -13,7 +13,7 @@ public abstract class QuestionCreator {
     
     public Question createQuestion() {
         MustacheFactory mf = new DefaultMustacheFactory();         
-        Mustache mustache = mf.compile(templateName);
+        Mustache mustache = mf.compile("templates/" + templateName);
         
         randomizeParameters();
         

@@ -35,6 +35,7 @@ public class QuestionService {
         creators.put(6, new SimpleWhileQuestionCreator());
         creators.put(7, new WhileMethodQuestionCreator());
         creators.put(8, new WhileMethodPrintVersionQuestionCreator());
+        creators.put(9, new ArrayListIndexQuestionCreator());
     }
 
     public Question createNewQuestion(Integer id) {

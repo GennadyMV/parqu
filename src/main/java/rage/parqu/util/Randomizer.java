@@ -15,6 +15,16 @@ public class Randomizer {
         return 1 + random.nextInt(10);
     }
     
+    /**
+     * Return a random value from zero to the given value. With 2, it returns 0-2.
+     * 
+     * @param highestValue
+     * @return 
+     */
+    public static int randomSmallPositiveInteger(int highestValue){
+        return random.nextInt(highestValue + 1);
+    }
+    
     public static int randomSmallNegativeInteger(){
         return 0 - random.nextInt(2);
     }

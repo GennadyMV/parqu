@@ -39,6 +39,7 @@ public class QuestionService {
         creators.put(9, new ArrayListIndexQuestionCreator());
         creators.put(10, new EditValueQuestionCreator());
         creators.put(11, new EditValueAndIncrementQuestionCreator());
+        creators.put(12, new CharAtQuestionCreator());
     }
 
     public Question createNewQuestion(Integer id) {

@@ -9,7 +9,7 @@ import static rage.parqu.util.Randomizer.randomSmallPositiveInteger;
 public class IntegerListRemoveQuestionCreator extends QuestionCreator {
 
     private List<Integer> numbers;
-    private int index;
+    protected int index;
 
     public IntegerListRemoveQuestionCreator() {
         super.setTemplateName("integerlistremove.mustache");

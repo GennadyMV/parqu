@@ -1,5 +1,5 @@
 public static void main(String[] args) {
-    luku = {{value}};
+    int luku = {{value}};
     muokkaaLukua(luku);
     System.out.println(lisaaJaPalauta(luku));
 }
@@ -8,6 +8,6 @@ public static void muokkaaLukua(int luku) {
     luku = luku {{operator}} {{first}};
 }
 
-public static void lisaaJaPalauta(int arvo) {
-    return arvo {{operator}} {{second}};
+public static void lisaaJaPalauta(int luku) {
+    return luku {{operator}} {{second}};
 }

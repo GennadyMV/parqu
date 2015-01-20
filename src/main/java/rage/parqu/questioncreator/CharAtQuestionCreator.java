@@ -25,8 +25,6 @@ public class CharAtQuestionCreator extends QuestionCreator{
         if(!first.equals(second)){
             firstIndex = randomSmallPositiveInteger(first.length() - 1);
             secondIndex = randomSmallPositiveInteger(second.length()- 1);
-            System.out.println(first + firstIndex + second + secondIndex);
-            System.out.println("" + first.charAt(firstIndex) + second.charAt(secondIndex));
         } else {
             randomizeParameters();  
         }

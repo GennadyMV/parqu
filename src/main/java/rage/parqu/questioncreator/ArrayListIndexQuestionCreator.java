@@ -7,19 +7,22 @@ import rage.parqu.domain.Question;
 import static rage.parqu.util.Randomizer.randomSmallPositiveInteger;
 import static rage.parqu.util.Randomizer.randomString;
 
-public class ArrayListIndexQuestionCreator extends QuestionCreator{
-    
+public class ArrayListIndexQuestionCreator extends QuestionCreator {
+
     private final List<String> names = new ArrayList();
     private int correctIndex;
 
     public ArrayListIndexQuestionCreator() {
         super.setTemplateName("arraylistindex.mustache");
     }
-    
+
     @Override
     protected void randomizeParameters() {
-        for (int i = 0; i <= 3; i++) {
-            names.add((randomString()));
+        while (names.size() < 3) {
+            String newName = randomString();
+            if (!names.contains(newName)) {
+                names.add((randomString()));
+            }
         }
         correctIndex = randomSmallPositiveInteger(2);
     }
@@ -38,7 +41,7 @@ public class ArrayListIndexQuestionCreator extends QuestionCreator{
         Question question = new Question();
         question.setQuestionText("Mikä on merkkijonon \"" + names.get(correctIndex) + "\" indeksi?");
         question.setAnswers("" + 0, "" + 1, "" + 2, "" + 3);
-        return question;    
+        return question;
     }
 
     @Override

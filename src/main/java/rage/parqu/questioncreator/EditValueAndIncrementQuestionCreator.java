@@ -35,7 +35,7 @@ public class EditValueAndIncrementQuestionCreator extends QuestionCreator{
         scopes.put("operator", operator.toString());
         scopes.put("value", value);
         scopes.put("first", firstModifier);
-        scopes.put("second", firstModifier);
+        scopes.put("second", secondModifier);
         
         return scopes;
     }

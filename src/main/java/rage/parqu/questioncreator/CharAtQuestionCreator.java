@@ -1,8 +1,8 @@
 package rage.parqu.questioncreator;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 import rage.parqu.domain.Question;
 import static rage.parqu.util.Randomizer.randomSmallPositiveInteger;
 import static rage.parqu.util.Randomizer.randomString;
@@ -23,8 +23,10 @@ public class CharAtQuestionCreator extends QuestionCreator{
         first = randomString();
         second = randomString();
         if(!first.equals(second)){
-            firstIndex = randomSmallPositiveInteger();
-            secondIndex = randomSmallPositiveInteger();
+            firstIndex = randomSmallPositiveInteger(first.length() - 1);
+            secondIndex = randomSmallPositiveInteger(second.length()- 1);
+            System.out.println(first + firstIndex + second + secondIndex);
+            System.out.println("" + first.charAt(firstIndex) + second.charAt(secondIndex));
         } else {
             randomizeParameters();  
         }
@@ -51,18 +53,31 @@ public class CharAtQuestionCreator extends QuestionCreator{
 
     @Override
     protected String determineRightAnswer() {
-        System.out.println("" + first.charAt(firstIndex) + second.charAt(secondIndex));
         return "" + first.charAt(firstIndex) + second.charAt(secondIndex);
     }
 
-    private List<String> buildAnswers() {
-        List<String> answers = new ArrayList();
-        for (int i = -1; i <= 1; i++) {
-            for (int j = -1; j < 1; j++) {
-                answers.add("" + first.charAt(firstIndex + i) + second.charAt(secondIndex + j));        
+    private String[] buildAnswers() {
+        Set<String> answers = new TreeSet();
+        int iStart = determineStartingIndex(first, firstIndex);
+        int jStart = determineStartingIndex(second, secondIndex);
+        
+        for (int i = 0; i <= 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                answers.add("" + first.charAt(iStart + i) + second.charAt(jStart + j));        
             }
         }        
-        return answers;
+        return answers.toArray(new String[0]);
+    }
+
+    private int determineStartingIndex(String string, int index) {
+        if(index == 0){
+            return 0;
+        } else if(string.equals("Leo")){
+            return 0;
+        } else if (index >= (string.length() - 2)){
+            return string.length() - 3;
+        } 
+        return 0;
     }
     
 }

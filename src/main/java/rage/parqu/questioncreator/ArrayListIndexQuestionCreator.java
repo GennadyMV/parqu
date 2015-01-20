@@ -9,7 +9,7 @@ import static rage.parqu.util.Randomizer.randomString;
 
 public class ArrayListIndexQuestionCreator extends QuestionCreator {
 
-    private final List<String> names = new ArrayList();
+    private List<String> names;
     private int correctIndex;
 
     public ArrayListIndexQuestionCreator() {
@@ -18,10 +18,11 @@ public class ArrayListIndexQuestionCreator extends QuestionCreator {
 
     @Override
     protected void randomizeParameters() {
+        names = new ArrayList();
         while (names.size() < 3) {
             String newName = randomString();
             if (!names.contains(newName)) {
-                names.add((randomString()));
+                names.add(newName);
             }
         }
         correctIndex = randomSmallPositiveInteger(2);

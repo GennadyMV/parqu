@@ -6,6 +6,7 @@ public class Randomizer {
     
     private static final Random random = new Random();
     private static final String[] strings = {"Matti", "Arto", "Leo", "Joni", "Mika", "Lassi", "Kasper", "Kenny"};
+    private static final String[] functions = {"opiskele", "juhli", "nuku", "syo", "liiku", "pelaa"};
     
     public static int randomLargePositiveInteger(){
         return 1 + random.nextInt(100);
@@ -35,6 +36,10 @@ public class Randomizer {
     
     public static String randomString() {
         return strings[random.nextInt(strings.length)];
+    }
+    
+    public static String randomFunctionName() {
+        return functions[random.nextInt(functions.length)];
     }
     
 }

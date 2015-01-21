@@ -3,8 +3,8 @@ package rage.parqu.questioncreator;
 import java.util.HashMap;
 import rage.parqu.domain.Question;
 import rage.parqu.util.Operator;
-import static rage.parqu.util.Randomizer.randomLargePositiveInteger;
 import static rage.parqu.util.Randomizer.randomOperator;
+import static rage.parqu.util.Randomizer.randomSmallPositiveInteger;
 
 public class ClassCalculatorQuestionCreator extends QuestionCreator{
     
@@ -18,8 +18,8 @@ public class ClassCalculatorQuestionCreator extends QuestionCreator{
 
     @Override
     protected void randomizeParameters() {
-        modifier = randomLargePositiveInteger();
-        value = randomLargePositiveInteger();
+        modifier = randomSmallPositiveInteger();
+        value = randomSmallPositiveInteger();
         operator = randomOperator();
     }
 

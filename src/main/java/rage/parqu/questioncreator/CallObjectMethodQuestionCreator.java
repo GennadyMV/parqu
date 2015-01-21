@@ -42,7 +42,7 @@ public class CallObjectMethodQuestionCreator extends QuestionCreator{
     protected Question setUpQuestionAndAnswers() {
         Question question = new Question();
         question.setQuestionText("Mikä näistä koodiriveistä ei aiheuta virhettä?");
-        question.setAnswers(name + "." + function, function + "()",name + "." + function + "()", "Opiskelija." + function, "Opiskelija." + function + "()");
+        question.setAnswers(name + "." + function + ";", function + "();",name + "." + function + "();", "Opiskelija." + function + ";", "Opiskelija." + function + "();");
         return question;    
     }
 

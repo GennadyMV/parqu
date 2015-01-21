@@ -33,6 +33,7 @@ public class CallObjectMethodQuestionCreator extends QuestionCreator{
         scopes.put("operator", operator.toString());
         scopes.put("amount", amount);
         scopes.put("function", function);
+        scopes.put("name", name);
         
         return scopes;
     }

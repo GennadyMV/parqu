@@ -6,8 +6,8 @@ public class Laskuri {
         this.arvo = arvo;
     }
 
-    public void muutaArvoa(int modifier) {
-        this.value = this.value {{operator}} modifier;
+    public void kasvataArvoa(int modifier) {
+        this.value = this.value + modifier;
     }
 
     public int getArvo() {
@@ -20,6 +20,7 @@ public class Laskuri {
 
 public static void main(String[] args) {
     Laskuri laskuri = new Laskuri({{value}});
-    laskuri.muutaArvoa({{modifier}});
-    System.out.println(laskuri.getArvo());
+    int luku = {{modifier}};
+    laskuri.kasvataArvoa(luku);
+    System.out.println(luku);
 }

@@ -37,7 +37,7 @@ public class ClassCalculatorQuestionCreator extends QuestionCreator{
     protected Question setUpQuestionAndAnswers() {
         Question question = new Question();
         question.setQuestionText("Mikä numero tulostetaan?");
-        question.setAnswers("" + (value + modifier), "" + (modifier - value), "" + (value - modifier), "" + value);
+        question.setAnswers("" + (value + modifier), "" + (modifier - value), "" + (value - modifier), "" + value, "" + modifier);
         return question;    
     }
 

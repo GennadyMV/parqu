@@ -1,0 +1,25 @@
+public class Laskuri {
+
+    private int arvo;
+	
+    public Calculator(int arvo) {
+        this.arvo = arvo;
+    }
+
+    public void muutaArvoa(int modifier) {
+        this.value = this.value {{operator}} modifier;
+    }
+
+    public int getArvo() {
+        return arvo;
+    }
+
+}
+
+--------------------------------
+
+public static void main(String[] args) {
+    Laskuri laskuri = new Laskuri({{value}});
+    laskuri.muutaArvoa({{modifier}});
+    System.out.println(laskuri.getArvo());
+}

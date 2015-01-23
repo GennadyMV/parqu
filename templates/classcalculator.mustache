@@ -1,20 +1,20 @@
 public class Calculator {
 
-	private int value;
+    private int value;
 	
-	public Calculator(int value){
-		this.value = value;
-	}
+    public Calculator(int value) {
+        this.value = value;
+    }
 
-	public int modify(int modifier){
-		return this.value {{operator}} modifier
-	}
+    public int modify(int modifier) {
+        return this.value {{operator}} modifier;
+    }
 
 }
 
 --------------------------------
 
-public static void main(String[] args){
-	Calculator thing = new Calculator({{value}});
-	System.out.println(modify({{modifier}}));
+public static void main(String[] args) {
+    Calculator thing = new Calculator({{value}});
+    System.out.println(thing.modify({{modifier}}));
 }

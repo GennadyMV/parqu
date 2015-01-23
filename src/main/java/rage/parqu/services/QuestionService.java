@@ -43,6 +43,7 @@ public class QuestionService {
         creators.put(13, new IntegerListRemoveQuestionCreator());
         creators.put(14, new IntegerListRemoveValueQuestionCreator());
         creators.put(15, new CallObjectMethodQuestionCreator());
+        creators.put(16, new ChangeObjectParameterQuestionCreator());
     }
 
     public Question createNewQuestion(Integer id) {

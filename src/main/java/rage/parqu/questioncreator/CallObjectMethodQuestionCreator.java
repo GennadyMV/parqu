@@ -48,6 +48,6 @@ public class CallObjectMethodQuestionCreator extends QuestionCreator{
 
     @Override
     protected String determineRightAnswer() {
-        return name + "." + function + "()";
+        return name + "." + function + "();";
     }
 }

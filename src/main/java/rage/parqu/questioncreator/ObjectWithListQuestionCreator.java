@@ -31,6 +31,9 @@ public class ObjectWithListQuestionCreator extends QuestionCreator {
             randomizeParameters();
         }
         index2 = index + randomSmallPositiveInteger((numbers.size() - index) - 2);
+        if(index2 == numbers.get(index2 + 1)){
+            randomizeParameters();
+        }
     }
 
     @Override

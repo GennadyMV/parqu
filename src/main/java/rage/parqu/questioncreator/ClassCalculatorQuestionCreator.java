@@ -9,7 +9,7 @@ import static rage.parqu.util.Randomizer.randomSmallPositiveInteger;
 public class ClassCalculatorQuestionCreator extends QuestionCreator{
     
     private Operator operator;
-    private int modifier;
+    protected int modifier;
     private int value;
     
     public ClassCalculatorQuestionCreator(){

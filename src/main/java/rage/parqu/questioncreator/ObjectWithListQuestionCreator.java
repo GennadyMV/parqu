@@ -30,7 +30,7 @@ public class ObjectWithListQuestionCreator extends QuestionCreator {
         if(index == numbers.get(index)){
             randomizeParameters();
         }
-        index2 = index + randomSmallPositiveInteger((numbers.size() - index));
+        index2 = index + randomSmallPositiveInteger((numbers.size() - index) - 2);
     }
 
     @Override
@@ -53,7 +53,7 @@ public class ObjectWithListQuestionCreator extends QuestionCreator {
     }
 
     @Override
-    protected String determineRightAnswer() {
+    protected String determineRightAnswer() {        
         return "" + numbers.get(index2 + 1);
     }
 

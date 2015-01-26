@@ -33,10 +33,9 @@ public class IntegerListRemoveQuestionCreator extends QuestionCreator {
     @Override
     protected HashMap<String, Object> setUpScope() {
         HashMap<String, Object> scopes = new HashMap<>();
-        scopes.put("value", numbers.get(0));
-        scopes.put("value2", numbers.get(1));
-        scopes.put("value3", numbers.get(2));
-        scopes.put("value4", numbers.get(3));
+        for (int i = 0; i < numbers.size(); i++) {
+            scopes.put("value" + (i+1), numbers.get(i));
+        }
         scopes.put("index", index);
         return scopes;
     }

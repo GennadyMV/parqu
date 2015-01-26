@@ -6,6 +6,7 @@ public class DoParametersChangeQuestionCreator extends ClassCalculatorQuestionCr
         super.setTemplateName("doparameterschange.mustache");
     }
 
+    @Override
     public String determineRightAnswer(){
         return "" + super.modifier;
     }

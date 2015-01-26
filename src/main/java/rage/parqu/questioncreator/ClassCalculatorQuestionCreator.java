@@ -1,6 +1,8 @@
 package rage.parqu.questioncreator;
 
-public class ClassCalculatorQuestionCreator extends SimpleCalculationQuestionCreator{
+import rage.parqu.abstractquestioncreators.ValuesAndOperatorQuestionCreator;
+
+public class ClassCalculatorQuestionCreator extends ValuesAndOperatorQuestionCreator{
     
     public ClassCalculatorQuestionCreator(){
         super.setTemplateName("classcalculator.mustache");

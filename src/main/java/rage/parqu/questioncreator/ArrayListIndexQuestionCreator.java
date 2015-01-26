@@ -1,5 +1,6 @@
 package rage.parqu.questioncreator;
 
+import rage.parqu.abstractquestioncreators.QuestionCreator;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;

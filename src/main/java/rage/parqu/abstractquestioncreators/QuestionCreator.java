@@ -1,4 +1,4 @@
-package rage.parqu.questioncreator;
+package rage.parqu.abstractquestioncreators;
 
 import com.github.mustachejava.DefaultMustacheFactory;
 import com.github.mustachejava.Mustache;

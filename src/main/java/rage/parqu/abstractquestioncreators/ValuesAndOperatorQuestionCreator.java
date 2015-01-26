@@ -2,12 +2,11 @@ package rage.parqu.abstractquestioncreators;
 
 import java.util.HashMap;
 import rage.parqu.domain.Question;
-import rage.parqu.questioncreator.QuestionCreator;
 import rage.parqu.util.Operator;
 import static rage.parqu.util.Randomizer.randomOperator;
 import static rage.parqu.util.Randomizer.randomSmallPositiveInteger;
 
-public class ValuesAndOperatorQuestionCreator extends QuestionCreator{
+public abstract class ValuesAndOperatorQuestionCreator extends QuestionCreator{
     
     private int value;
     protected int modifier;

@@ -1,5 +1,6 @@
 package rage.parqu.questioncreator;
 
+import rage.parqu.abstractquestioncreators.QuestionCreator;
 import java.util.HashMap;
 import rage.parqu.domain.Question;
 import rage.parqu.util.Operator;

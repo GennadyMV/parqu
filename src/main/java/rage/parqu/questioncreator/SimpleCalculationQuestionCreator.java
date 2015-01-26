@@ -8,8 +8,8 @@ import static rage.parqu.util.Randomizer.randomSmallPositiveInteger;
 
 public class SimpleCalculationQuestionCreator extends QuestionCreator{
     
-    private int first;
-    private int second;
+    private int value;
+    protected int modifier;
     private Operator operator;
 
     public SimpleCalculationQuestionCreator() {
@@ -18,9 +18,9 @@ public class SimpleCalculationQuestionCreator extends QuestionCreator{
 
     @Override
     protected void randomizeParameters() {
-        first = randomSmallPositiveInteger();
-        second = randomSmallPositiveInteger();
-        if(first == second){
+        value = randomSmallPositiveInteger();
+        modifier = randomSmallPositiveInteger();
+        if(value == modifier){
             randomizeParameters();
         }
         operator = randomOperator();
@@ -30,8 +30,8 @@ public class SimpleCalculationQuestionCreator extends QuestionCreator{
     protected HashMap<String, Object> setUpScope() {
         HashMap<String, Object> scopes = new HashMap<>();
         scopes.put("operator", operator.toString());
-        scopes.put("first", first);
-        scopes.put("second", second);
+        scopes.put("value", value);
+        scopes.put("modifier", modifier);
         
         return scopes;    
     }
@@ -40,16 +40,16 @@ public class SimpleCalculationQuestionCreator extends QuestionCreator{
     protected Question setUpQuestionAndAnswers() {
         Question question = new Question();
         question.setQuestionText("Mikä numero tulostetaan?");
-        question.setAnswers("" + (first + second), "" + (first - second), "" + (second - first), "" + first, "" + second);
+        question.setAnswers("" + (value + modifier), "" + (value - modifier), "" + (modifier - value), "" + value, "" + modifier);
         return question;       
     }
 
     @Override
     protected String determineRightAnswer() {
         if(operator == Operator.PLUS){
-            return "" + (first + second);
+            return "" + (value + modifier);
         } else if (operator == Operator.MINUS){
-            return "" + (first - second);
+            return "" + (value - modifier);
         } else {
             return "töttöröö";
         }    

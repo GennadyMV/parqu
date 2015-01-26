@@ -1,6 +1,6 @@
 package rage.parqu.questioncreator;
 
-public class ChangeObjectParameterQuestionCreator extends ClassCalculatorQuestionCreator{
+public class ChangeObjectParameterQuestionCreator extends SimpleCalculationQuestionCreator{
     
     public ChangeObjectParameterQuestionCreator(){
         super.setTemplateName("changeobjectparameter.mustache");

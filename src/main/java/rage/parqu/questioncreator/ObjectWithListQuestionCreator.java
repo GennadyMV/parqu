@@ -39,7 +39,7 @@ public class ObjectWithListQuestionCreator extends QuestionCreator {
         for (int i = 0; i < numbers.size(); i++) {
             scopes.put("value" + (i+1), numbers.get(i));
         }
-        scopes.put("index", index);
+        scopes.put("index1", index);
         scopes.put("index2", index2);
         return scopes;
     }

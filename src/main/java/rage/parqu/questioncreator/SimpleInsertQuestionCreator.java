@@ -1,10 +1,7 @@
 package rage.parqu.questioncreator;
 
-import java.util.HashMap;
-import rage.parqu.abstractquestioncreators.QuestionCreator;
 import rage.parqu.abstractquestioncreators.TwoValueQuestionCreator;
 import rage.parqu.domain.Question;
-import static rage.parqu.util.Randomizer.randomSmallPositiveInteger;
 
 public class SimpleInsertQuestionCreator extends TwoValueQuestionCreator{
 

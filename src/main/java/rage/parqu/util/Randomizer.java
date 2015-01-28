@@ -7,7 +7,7 @@ public class Randomizer {
     private static final Random random = new Random();
     private static final String[] strings = {"Matti", "Arto", "Leo", "Joni", "Mika", "Lassi", "Kasper", "Kenny"};
     private static final String[] functions = {"opiskele", "juhli", "nuku", "syo", "liiku", "pelaa"};
-    private static final String[] passengers = {"Marty", "Emmett", "Lorraine", "George", "Biff", "Tohtori"};
+    private static final String[] passengers = {"Marty", "Emmett", "Lorraine", "George", "Biff", "Tohtori", "Jennifer"};
     private static final String[] timeMachines = {"tardis", "deLorean", "aikakone"};
 
     
@@ -30,7 +30,7 @@ public class Randomizer {
     }
     
     public static int randomPositiveIntegerExclusive(int highestValue){
-        return random.nextInt(highestValue);
+        return random.nextInt(highestValue) + 1;
     }
     
     public static int randomSmallNegativeInteger(){

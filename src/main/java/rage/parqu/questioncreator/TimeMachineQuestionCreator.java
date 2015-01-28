@@ -45,7 +45,7 @@ public class TimeMachineQuestionCreator extends QuestionCreator {
 
     @Override
     protected String determineRightAnswer() {
-        return "" + startingYear + modifier;
+        return "" + (startingYear + modifier);
     }
     
 }

@@ -1,0 +1,31 @@
+public class Laskuri {
+
+    private int arvo;
+	
+    public Laskuri(int arvo) {
+        this.arvo = arvo;
+    }
+
+    public void kasvataArvoa() {
+        this.arvo = this.arvo + 1;
+    }
+
+    public void kasvataArvoa(int modifier) {
+        this.arvo = this.arvo + modifier;
+    }
+
+    public int getArvo() {
+        return arvo;
+    }
+
+}
+
+--------------------------------
+
+public static void main(String[] args) {
+    Laskuri laskuri = new Laskuri({{first}});
+    laskuri.kasvataArvoa({{second}});
+    laskuri.kasvataArvoa();
+    laskuri.kasvataArvoa();
+    System.out.println(laskuri.getArvo());
+}

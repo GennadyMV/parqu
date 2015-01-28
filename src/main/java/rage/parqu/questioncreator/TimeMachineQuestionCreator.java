@@ -3,10 +3,7 @@ package rage.parqu.questioncreator;
 import java.util.HashMap;
 import rage.parqu.abstractquestioncreators.QuestionCreator;
 import rage.parqu.domain.Question;
-import static rage.parqu.util.Randomizer.randomPassenger;
-import static rage.parqu.util.Randomizer.randomPositiveIntegerExclusive;
-import static rage.parqu.util.Randomizer.randomPositiveIntegerInclusive;
-import static rage.parqu.util.Randomizer.randomTimeMachine;
+import static rage.parqu.util.Randomizer.*;
 
 public class TimeMachineQuestionCreator extends QuestionCreator {
 
@@ -21,9 +18,9 @@ public class TimeMachineQuestionCreator extends QuestionCreator {
 
     @Override
     protected void randomizeParameters() {
-        startingYear = 1955 + randomPositiveIntegerInclusive(60);
-        modifier = randomPositiveIntegerExclusive(60);
-        passenger = randomPassenger();
+        startingYear = 1985 + randomPositiveIntegerInclusive(30) * positiveOrNegative();
+        modifier = randomPositiveIntegerExclusive(30) * positiveOrNegative();
+        passenger = randomPassenger().toLowerCase();
         timeMachineName = randomTimeMachine();
     }
 

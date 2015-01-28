@@ -1,35 +1,15 @@
 package rage.parqu.questioncreator;
 
-import rage.parqu.abstractquestioncreators.QuestionCreator;
 import java.util.HashMap;
+import rage.parqu.abstractquestioncreators.QuestionCreator;
+import rage.parqu.abstractquestioncreators.TwoValueQuestionCreator;
 import rage.parqu.domain.Question;
 import static rage.parqu.util.Randomizer.randomSmallPositiveInteger;
 
-public class SimpleInsertQuestionCreator extends QuestionCreator{
-
-    private int first;
-    private int second;
+public class SimpleInsertQuestionCreator extends TwoValueQuestionCreator{
 
     public SimpleInsertQuestionCreator() {
         super.setTemplateName("simpleinsertion.mustache");
-    }
-
-    @Override
-    protected void randomizeParameters() {
-        first = randomSmallPositiveInteger();
-        second = randomSmallPositiveInteger();
-        if(first == second){
-            randomizeParameters();
-        }
-    }
-
-    @Override
-    protected HashMap<String, Object> setUpScope() {
-        HashMap<String, Object> scopes = new HashMap<>();
-        scopes.put("first", first);
-        scopes.put("second", second);
-        
-        return scopes;    
     }
 
     @Override

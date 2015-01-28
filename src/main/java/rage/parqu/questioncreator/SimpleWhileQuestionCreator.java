@@ -1,16 +1,12 @@
 package rage.parqu.questioncreator;
 
-import rage.parqu.abstractquestioncreators.QuestionCreator;
-import java.util.HashMap;
+import rage.parqu.abstractquestioncreators.TwoValueQuestionCreator;
 import rage.parqu.domain.Question;
 import static rage.parqu.util.Randomizer.randomSmallNegativeInteger;
 import static rage.parqu.util.Randomizer.randomSmallPositiveInteger;
 
-public class SimpleWhileQuestionCreator extends QuestionCreator{
-
-    private int first;
-    private int second;
-
+public class SimpleWhileQuestionCreator extends TwoValueQuestionCreator{
+    
     public SimpleWhileQuestionCreator() {
         super.setTemplateName("simplewhile.mustache");
     }
@@ -28,15 +24,6 @@ public class SimpleWhileQuestionCreator extends QuestionCreator{
                 second = temp;
             }
         }
-    }
-
-    @Override
-    protected HashMap<String, Object> setUpScope() {
-        HashMap<String, Object> scopes = new HashMap<>();
-        scopes.put("first", first);
-        scopes.put("second", second);
-        
-        return scopes;    
     }
 
     @Override

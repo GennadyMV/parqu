@@ -7,6 +7,9 @@ public class Randomizer {
     private static final Random random = new Random();
     private static final String[] strings = {"Matti", "Arto", "Leo", "Joni", "Mika", "Lassi", "Kasper", "Kenny"};
     private static final String[] functions = {"opiskele", "juhli", "nuku", "syo", "liiku", "pelaa"};
+    private static final String[] passengers = {"Marty", "Emmett", "Lorraine", "George", "Biff", "Tohtori"};
+    private static final String[] timeMachines = {"tardis", "deLorean", "aikakone"};
+
     
     public static int randomLargePositiveInteger(){
         return 1 + random.nextInt(100);
@@ -22,8 +25,12 @@ public class Randomizer {
      * @param highestValue
      * @return 
      */
-    public static int randomSmallPositiveInteger(int highestValue){
+    public static int randomPositiveIntegerInclusive(int highestValue){
         return random.nextInt(highestValue + 1);
+    }
+    
+    public static int randomPositiveIntegerExclusive(int highestValue){
+        return random.nextInt(highestValue);
     }
     
     public static int randomSmallNegativeInteger(){
@@ -42,4 +49,19 @@ public class Randomizer {
         return functions[random.nextInt(functions.length)];
     }
     
+    public static String randomPassenger() {
+        return passengers[random.nextInt(passengers.length)];
+    }
+    
+    public static String randomTimeMachine() {
+        return timeMachines[random.nextInt(timeMachines.length)];
+    }
+    
+    public static int positiveOrNegative(){
+        if(random.nextBoolean()){
+            return 1;
+        } else {
+            return -1;
+        }
+    }
 }

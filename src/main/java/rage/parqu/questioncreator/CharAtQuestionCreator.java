@@ -1,11 +1,11 @@
 package rage.parqu.questioncreator;
 
-import rage.parqu.abstractquestioncreators.QuestionCreator;
 import java.util.HashMap;
 import java.util.Set;
 import java.util.TreeSet;
+import rage.parqu.abstractquestioncreators.QuestionCreator;
 import rage.parqu.domain.Question;
-import static rage.parqu.util.Randomizer.randomSmallPositiveInteger;
+import static rage.parqu.util.Randomizer.randomPositiveIntegerInclusive;
 import static rage.parqu.util.Randomizer.randomString;
 
 public class CharAtQuestionCreator extends QuestionCreator{
@@ -24,8 +24,8 @@ public class CharAtQuestionCreator extends QuestionCreator{
         first = randomString();
         second = randomString();
         if(!first.equals(second)){
-            firstIndex = randomSmallPositiveInteger(first.length() - 1);
-            secondIndex = randomSmallPositiveInteger(second.length()- 1);
+            firstIndex = randomPositiveIntegerInclusive(first.length() - 1);
+            secondIndex = randomPositiveIntegerInclusive(second.length()- 1);
         } else {
             randomizeParameters();  
         }

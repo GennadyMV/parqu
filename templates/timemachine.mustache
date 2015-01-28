@@ -1,0 +1,42 @@
+public class Henkilo {
+    
+    private int vuosi;
+    
+    public Henkilo() {
+        this.vuosi = {{startingYear}};
+    }
+
+    public int getVuosi() {
+        return this.vuosi;
+    }
+
+    public int setVuosi(int vuosi) {
+        this.vuosi = vuosi;
+    }   
+
+}
+
+-------------------------------
+
+public class Aikakone {
+    
+    private Henkilo matkustaja;
+    
+    public Aikakone (Henkilo henkilo) {
+        this.matkustaja = henkilo;
+    }
+    
+    public void siirryAjassa(int vuosia) {
+        this.matkustaja.setVuosi(this.matkustaja.getVuosi + vuosia);
+    }
+
+}
+
+------------------------
+
+public static void main(String[] args) {
+    Henkilo {{name}} = new Henkilo();
+    Aikakone {{timemachinename}} = new Aikakone();
+    {{timemachinename}}.siirryAjassa({{modifier}});
+    System.out.println({{name}}.getVuosi());
+}

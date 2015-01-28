@@ -1,11 +1,11 @@
 package rage.parqu.questioncreator;
 
-import rage.parqu.abstractquestioncreators.QuestionCreator;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import rage.parqu.abstractquestioncreators.QuestionCreator;
 import rage.parqu.domain.Question;
-import static rage.parqu.util.Randomizer.randomSmallPositiveInteger;
+import static rage.parqu.util.Randomizer.randomPositiveIntegerInclusive;
 import static rage.parqu.util.Randomizer.randomString;
 
 public class ArrayListIndexQuestionCreator extends QuestionCreator {
@@ -26,7 +26,7 @@ public class ArrayListIndexQuestionCreator extends QuestionCreator {
                 names.add(newName);
             }
         }
-        correctIndex = randomSmallPositiveInteger(2);
+        correctIndex = randomPositiveIntegerInclusive(2);
     }
 
     @Override

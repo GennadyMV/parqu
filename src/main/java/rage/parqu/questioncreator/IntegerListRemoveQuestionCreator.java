@@ -1,11 +1,11 @@
 package rage.parqu.questioncreator;
 
-import rage.parqu.abstractquestioncreators.QuestionCreator;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import rage.parqu.abstractquestioncreators.QuestionCreator;
 import rage.parqu.domain.Question;
-import static rage.parqu.util.Randomizer.randomSmallPositiveInteger;
+import static rage.parqu.util.Randomizer.randomPositiveIntegerInclusive;
 
 public class IntegerListRemoveQuestionCreator extends QuestionCreator {
 
@@ -20,7 +20,7 @@ public class IntegerListRemoveQuestionCreator extends QuestionCreator {
     protected void randomizeParameters() {
         numbers = new ArrayList();
         while (numbers.size() < 4) {
-            int newNumber = randomSmallPositiveInteger(6);
+            int newNumber = randomPositiveIntegerInclusive(6);
             if (!numbers.contains(newNumber)) {
                 numbers.add(newNumber);
             }

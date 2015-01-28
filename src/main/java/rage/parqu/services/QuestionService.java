@@ -47,6 +47,7 @@ public class QuestionService {
         creators.put(16, new ChangeObjectParameterQuestionCreator());
         creators.put(17, new DoParametersChangeQuestionCreator());
         creators.put(18, new ObjectWithListQuestionCreator());
+        creators.put(19, new TimeMachineQuestionCreator());
     }
 
     public Question createNewQuestion(Integer id) {

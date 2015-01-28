@@ -1,0 +1,36 @@
+public class Listaaja {
+
+    private ArrayList&lt;Integer&gt; arvot;
+	
+    public Listaaja(ArrayList&lt;Integer&gt; arvot) {
+        this.arvot = arvot;
+    }
+
+    public void poista(int luku) {
+        arvot.remove(luku);
+    }
+
+    public String haeLuku(int luku){
+        return arvot.get(luku);
+    }
+
+}
+
+--------------------------------
+
+public static void main(String[] args) {
+    ArrayList&lt;String&gt; numerot = new ArrayList&lt;&gt;();
+
+    numerot.add({{value1}});
+    numerot.add({{value2}});
+    numerot.add({{value3}});
+    numerot.add({{value4}});
+    numerot.add({{value5}});
+    numerot.add({{value6}});
+
+    Listaaja listaaja = new Listaaja(numerot);
+
+    listaaja.poista({{index1}});
+
+    System.out.println(numerot.get({{index2}});
+}

@@ -9,6 +9,7 @@ public class Randomizer {
     private static final String[] functions = {"opiskele", "juhli", "nuku", "syo", "liiku", "pelaa"};
     private static final String[] passengers = {"Marty", "Emmett", "Lorraine", "George", "Biff", "Tohtori", "Jennifer"};
     private static final String[] timeMachines = {"tardis", "deLorean", "aikakone"};
+    private static final String[] pets = {"Trevor", "Hedwig", "Nagini", "Koukkujalka", "Hämäkäk", "Kutka", "Posityyhtynen"};
 
     
     public static int randomLargePositiveInteger(){
@@ -51,6 +52,10 @@ public class Randomizer {
     
     public static String randomPassenger() {
         return passengers[random.nextInt(passengers.length)];
+    }
+    
+    public static String randomPet() {
+        return pets[random.nextInt(pets.length)];
     }
     
     public static String randomTimeMachine() {

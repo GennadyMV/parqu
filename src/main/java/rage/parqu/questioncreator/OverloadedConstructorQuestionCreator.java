@@ -5,6 +5,8 @@ import java.util.Set;
 import java.util.TreeSet;
 import rage.parqu.abstractquestioncreators.QuestionCreator;
 import rage.parqu.domain.Question;
+import static rage.parqu.util.Randomizer.randomPet;
+import static rage.parqu.util.Randomizer.randomSmallPositiveInteger;
 
 public class OverloadedConstructorQuestionCreator extends QuestionCreator {
 
@@ -19,7 +21,16 @@ public class OverloadedConstructorQuestionCreator extends QuestionCreator {
 
     @Override
     protected void randomizeParameters() {
-
+        age1 = randomSmallPositiveInteger();
+        age2 = randomSmallPositiveInteger();
+        if(age1 == age2){
+            randomizeParameters();
+        }
+        name1 = randomPet();
+        name2 = randomPet();
+        if(name1.equals(name2)){
+            randomizeParameters();
+        }
     }
 
     @Override
@@ -46,7 +57,7 @@ public class OverloadedConstructorQuestionCreator extends QuestionCreator {
     }
     
     private String fakeToString(String name, int age){
-        return "" + name + " (" + age + "vuotta)";
+        return "" + name + " (" + age + " vuotta)";
     }
     
     private String[] buildAnswers() {

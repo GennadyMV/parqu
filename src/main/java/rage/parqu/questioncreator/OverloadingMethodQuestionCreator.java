@@ -28,6 +28,7 @@ public class OverloadingMethodQuestionCreator extends TwoValueQuestionCreator {
         answers.add((second + 2) + "");
         answers.add((first + second + 2) + "");
         answers.add((second + first) + "");
+        answers.add((second * 3 + first) + "");
 
         return answers.toArray(new String[0]);
     }

@@ -22,9 +22,7 @@ public class OverloadingMethodQuestionCreator extends TwoValueQuestionCreator {
     private String[] buildAnswers() {
         Set<String> answers = new TreeSet();
 
-        answerPlusTwo(answers, first);
         answerPlusTwo(answers, second);
-        answerPlusTwo(answers, (first + second));
 
         return answers.toArray(new String[0]);
     }

@@ -68,7 +68,8 @@ public class OverloadedConstructorQuestionCreator extends QuestionCreator {
         answers.add(fakeToString(name1, age1) + ", " + fakeToString(name2, 0) + ", " + fakeToString(name1, age2));
         answers.add(fakeToString(name1, age1) + ", " + " (0 vuotta)" + ", " + "Posityyhtynen");
         answers.add(fakeToString(name1, age1) + ", " + " (0 vuotta)" + ", " + "Posityyhtynen ( vuotta)");
-        answers.add(fakeToString(name1, age1) + ", " + fakeToString(name2, age1) + ", " + fakeToString("Musti", age2));        
+        answers.add(fakeToString(name1, age1) + ", " + fakeToString(name2, age1) + ", " + fakeToString("Musti", age2));
+        answers.add(fakeToString(name1, age1) + ", " + fakeToString(name2, age1) + ", " + fakeToString(name2, age2)); 
         
         return answers.toArray(new String[0]);
     }

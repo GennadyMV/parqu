@@ -31,7 +31,7 @@ public class OverloadingMethodQuestionCreator extends TwoValueQuestionCreator {
     private void answerPlusTwo(Set<String> answers, int value) {
         for (int i = 0; i <= 2; i++) {
             answers.add("" + (value + i));
-            answers.add("" + (value * (i + 1)));
+            answers.add("" + (value * (i + 1)) + first);
         }
     }
 

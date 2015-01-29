@@ -64,14 +64,11 @@ public class OverloadedConstructorQuestionCreator extends QuestionCreator {
         Set<String> answers = new TreeSet();
         
         answers.add(fakeToString(name1, age1) + ", " + fakeToString(name2, 0 ) + ", " + fakeToString("Musti", age2));
-        answers.add(fakeToString(name1, age1) + ", " + fakeToString(name1, 0 ) + ", " + fakeToString(name1, age2));
-        answers.add(fakeToString(name1, age1) + ", " + fakeToString(name2, 0 ) + ", " + fakeToString(name1, age2));
-        answers.add(fakeToString(name1, age1) + ", " + fakeToString(name2, age1 ) + ", " + fakeToString("Musti", age1));
-        answers.add(fakeToString(name1, age1) + ", " + fakeToString(name2, age2 ) + ", " + fakeToString("Musti", age1));
-        answers.add(fakeToString("Musti", age1) + ", " + fakeToString("Musti", 0 ) + ", " + fakeToString("Musti", age2));
-        answers.add(fakeToString(name1, 0) + ", " + fakeToString(name2, 0 ) + ", " + fakeToString("Musti", 0));
-        answers.add(fakeToString(name1, age2) + ", " + fakeToString(name2, age2 ) + ", " + fakeToString("Musti", age2));
-        answers.add(fakeToString(name1, age2) + ", " + fakeToString(name1, age2 ) + ", " + fakeToString("Musti", age2));
+        answers.add(fakeToString(name1, age1) + ", " + fakeToString(name2, age1 ) + ", " + fakeToString("Musti", age2));
+        answers.add(fakeToString(name1, age1) + ", " + fakeToString(name2, 0) + ", " + fakeToString(name1, age2));
+        answers.add(fakeToString(name1, age1) + ", " + " (0 vuotta)" + ", " + "Posityyhtynen");
+        answers.add(fakeToString(name1, age1) + ", " + " (0 vuotta)" + ", " + "Posityyhtynen ( vuotta)");
+        answers.add(fakeToString(name1, age1) + ", " + fakeToString(name2, age1) + ", " + fakeToString("Musti", age2));        
         
         return answers.toArray(new String[0]);
     }

@@ -27,9 +27,9 @@ public class Lemmikki {
 public static void main(String[] args) {
     ArrayList&lt;Lemmikki&gt; lemmikit = new ArrayList&lt;&gt;();
 
-    lemmikit.add(new Lemmikki({{name1}}, {{age1}}));
+    lemmikit.add(new Lemmikki("{{name1}}", {{age1}}));
+    lemmikit.add(new Lemmikki("{{name2}}"));
     lemmikit.add(new Lemmikki({{age2}}));
-    lemmikit.add(new Lemmikki({{name2}}));
 
     for (Lemmikki lemmikki: lemmikit) {
         System.out.println(lemmikki);    

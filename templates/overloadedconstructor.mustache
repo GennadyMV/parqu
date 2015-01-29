@@ -1,0 +1,37 @@
+public class Lemmikki {
+
+    private String nimi;
+    private int ika;
+
+    public Lemmikki(String nimi, int ika) {
+        this.nimi = nimi;
+        this.ika = ika;
+    }
+
+    public Lemmikki(String nimi) {
+        this(nimi, 0);
+    }
+
+    public Lemmikki(int ika) {
+        this("Musti", ika);
+    }
+
+    @Override
+    public String toString() {
+        return nimi + " (" + ika + " vuotta)";
+    }
+}
+
+------------------
+
+public static void main(String[] args) {
+    ArrayList&lt;Lemmikki&gt; lemmikit = new ArrayList&lt;&gt;();
+
+    lemmikit.add(new Lemmikki({{name1}}, {{age1}}));
+    lemmikit.add({{age2}});
+    lemmikit.add({{name2}});
+
+    for (Lemmikki lemmikki: lemmikit) {
+        System.out.println(lemmikki);    
+    }
+}

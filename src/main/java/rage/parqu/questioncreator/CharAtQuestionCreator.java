@@ -1,8 +1,8 @@
 package rage.parqu.questioncreator;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Set;
-import java.util.TreeSet;
 import rage.parqu.abstractquestioncreators.QuestionCreator;
 import rage.parqu.domain.Question;
 import static rage.parqu.util.Randomizer.randomPositiveIntegerInclusive;
@@ -56,7 +56,7 @@ public class CharAtQuestionCreator extends QuestionCreator{
     }
 
     private String[] buildAnswers() {
-        Set<String> answers = new TreeSet();
+        Set<String> answers = new HashSet();
         int iStart = determineStartingIndex(first, firstIndex);
         int jStart = determineStartingIndex(second, secondIndex);
         

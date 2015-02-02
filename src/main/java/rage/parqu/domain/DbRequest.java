@@ -11,7 +11,7 @@ public class DbRequest extends AbstractPersistable<Long>{
     private String studentID;
     private int questionID;
     private String timeStamp;
-    private UUID answerID;
+    private String answerID;
 
     public DbRequest() {
     }
@@ -19,15 +19,15 @@ public class DbRequest extends AbstractPersistable<Long>{
     public DbRequest(String studentID, int questionID, DateTime timeStamp, UUID answerID) {
         this.studentID = studentID;
         this.questionID = questionID;
-        this.answerID = answerID;
+        this.answerID = answerID.toString();
         this.timeStamp = timeStamp.toString();
     }
 
-    public UUID getAnswerID() {
+    public String getAnswerID() {
         return answerID;
     }
 
-    public void setAnswerID(UUID answerID) {
+    public void setAnswerID(String answerID) {
         this.answerID = answerID;
     }
 

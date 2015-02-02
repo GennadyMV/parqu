@@ -15,7 +15,7 @@ public class DbAnswer extends AbstractPersistable<Long> {
     private int questionID;
     private String answer;
     private String timeStamp;
-    private UUID answerID;
+    private String answerID;
 
     public DbAnswer() {
     }
@@ -27,7 +27,7 @@ public class DbAnswer extends AbstractPersistable<Long> {
         this.questionID = questionID;
         this.answer = answer;
         this.timeStamp = timeStamp.toString();
-        this.answerID = answerID;
+        this.answerID = answerID.toString();
     }
 
     public String getTimeStamp() {
@@ -38,11 +38,11 @@ public class DbAnswer extends AbstractPersistable<Long> {
         this.timeStamp = timeStamp;
     }
 
-    public UUID getAnswerID() {
+    public String getAnswerID() {
         return answerID;
     }
 
-    public void setAnswerID(UUID answerID) {
+    public void setAnswerID(String answerID) {
         this.answerID = answerID;
     }
 

@@ -55,7 +55,7 @@ public class CharAtQuestionCreator extends QuestionCreator{
         return "" + first.charAt(firstIndex) + second.charAt(secondIndex);
     }
 
-    private String[] buildAnswers() {
+    private Set<String> buildAnswers() {
         Set<String> answers = new HashSet();
         int iStart = determineStartingIndex(first, firstIndex);
         int jStart = determineStartingIndex(second, secondIndex);
@@ -65,7 +65,7 @@ public class CharAtQuestionCreator extends QuestionCreator{
                 answers.add("" + first.charAt(iStart + i) + second.charAt(jStart + j));        
             }
         }        
-        return answers.toArray(new String[0]);
+        return answers;
     }
 
     private int determineStartingIndex(String string, int index) {

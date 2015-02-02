@@ -2,14 +2,14 @@ package rage.parqu.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.UUID;
 import org.joda.time.DateTime;
 
 public class Question {
     
-    private List<String> answers;
+    private Set<String> answers;
     private String questionText;
     private String code;
     @JsonIgnore
@@ -25,17 +25,16 @@ public class Question {
         this.timeStamp = new DateTime();
     }
     
-    public List<String> getAnswers() {
+    public Set<String> getAnswers() {
         return answers;
     }
 
-    public void setAnswers(List<String> answers) {
-        Collections.shuffle(answers);
+    public void setAnswers(Set<String> answers) {
         this.answers = answers;
     }
     
     public void setAnswers(String... answers) {
-        this.setAnswers(Arrays.asList(answers));
+        this.setAnswers(new HashSet<>(Arrays.asList(answers)));
     }
 
     public String getQuestionText() {

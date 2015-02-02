@@ -19,7 +19,7 @@ public class OverloadingMethodQuestionCreator extends TwoValueQuestionCreator {
         return question;
     }
 
-    private String[] buildAnswers() {
+    private Set<String> buildAnswers() {
         Set<String> answers = new HashSet();
 
         answers.add(first + "");
@@ -30,7 +30,7 @@ public class OverloadingMethodQuestionCreator extends TwoValueQuestionCreator {
         answers.add((second + first) + "");
         answers.add((second * 3 + first) + "");
 
-        return answers.toArray(new String[0]);
+        return answers;
     }
 
     @Override

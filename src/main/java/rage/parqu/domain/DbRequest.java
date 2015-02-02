@@ -1,9 +1,11 @@
 package rage.parqu.domain;
 
 import java.util.Arrays;
+import javax.persistence.Entity;
 import org.joda.time.DateTime;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
+@Entity
 public class DbRequest extends AbstractPersistable<Long>{
     
     private String studentID;

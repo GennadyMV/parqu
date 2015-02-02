@@ -1,6 +1,5 @@
 package rage.parqu.services;
 
-import rage.parqu.abstractquestioncreators.QuestionCreator;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -12,11 +11,14 @@ import org.joda.time.DateTime;
 import org.joda.time.Hours;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import rage.parqu.abstractquestioncreators.QuestionCreator;
 import rage.parqu.domain.CheckRequest;
 import rage.parqu.domain.DbAnswer;
+import rage.parqu.domain.DbRequest;
 import rage.parqu.domain.Question;
 import rage.parqu.questioncreator.*;
 import rage.parqu.repositories.AnswerRepository;
+import rage.parqu.repositories.RequestRepository;
 
 @Service
 public class QuestionService {
@@ -25,6 +27,8 @@ public class QuestionService {
     private final Map<UUID, Question> questionsOnHold;
     @Autowired
     private AnswerRepository answerRepository;
+    @Autowired
+    private RequestRepository requestRepository;
     private int cleanupCounter = 0;
 
     public QuestionService() {
@@ -54,10 +58,12 @@ public class QuestionService {
 
     }
 
-    public Question createNewQuestion(Integer id) {
+    public Question createNewQuestion(Integer id, String studentID) {
         Question newQuestion = creators.get(id).createQuestion();
 
         questionsOnHold.put(newQuestion.getAnswerID(), newQuestion);
+        
+        requestRepository.save(new DbRequest(studentID, newQuestion.getParameters(), id, new DateTime()));
 
         return newQuestion;
     }

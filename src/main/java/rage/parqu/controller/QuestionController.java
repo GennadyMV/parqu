@@ -17,8 +17,9 @@ public class QuestionController {
     private QuestionService questionService;
 
     @RequestMapping("questions/{id}")
-    public Question getQuestion(@PathVariable Integer id) {
-        return questionService.createNewQuestion(id);
+    public Question getQuestion(@PathVariable Integer id, @RequestBody String studentID) {
+        System.out.println("StudentID is " + studentID);
+        return questionService.createNewQuestion(id, studentID);
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "questions")

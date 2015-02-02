@@ -13,6 +13,9 @@ public class DbRequest extends AbstractPersistable<Long>{
     private int questionID;
     private String timeStamp;
 
+    public DbRequest() {
+    }
+
     public DbRequest(String studentID, Object[] parameters, int questionID, DateTime timeStamp) {
         this.studentID = studentID;
         this.questionParameters = Arrays.toString(parameters);

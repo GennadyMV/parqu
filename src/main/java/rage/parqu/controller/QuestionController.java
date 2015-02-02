@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import rage.parqu.domain.CheckRequest;
 import rage.parqu.domain.Question;
@@ -17,8 +18,7 @@ public class QuestionController {
     private QuestionService questionService;
 
     @RequestMapping("questions/{id}")
-    public Question getQuestion(@PathVariable Integer id, @RequestBody String studentID) {
-        System.out.println("StudentID is " + studentID);
+    public Question getQuestion(@PathVariable Integer id, @RequestParam String studentID) {
         return questionService.createNewQuestion(id, studentID);
     }
 

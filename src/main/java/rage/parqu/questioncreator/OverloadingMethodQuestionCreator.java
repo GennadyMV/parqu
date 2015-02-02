@@ -1,7 +1,7 @@
 package rage.parqu.questioncreator;
 
+import java.util.HashSet;
 import java.util.Set;
-import java.util.TreeSet;
 import rage.parqu.abstractquestioncreators.TwoValueQuestionCreator;
 import rage.parqu.domain.Question;
 
@@ -19,8 +19,8 @@ public class OverloadingMethodQuestionCreator extends TwoValueQuestionCreator {
         return question;
     }
 
-    private String[] buildAnswers() {
-        Set<String> answers = new TreeSet();
+    private Set<String> buildAnswers() {
+        Set<String> answers = new HashSet();
 
         answers.add(first + "");
         answers.add(second + "");
@@ -30,7 +30,7 @@ public class OverloadingMethodQuestionCreator extends TwoValueQuestionCreator {
         answers.add((second + first) + "");
         answers.add((second * 3 + first) + "");
 
-        return answers.toArray(new String[0]);
+        return answers;
     }
 
     @Override

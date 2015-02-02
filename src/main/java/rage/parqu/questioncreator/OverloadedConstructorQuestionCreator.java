@@ -1,8 +1,8 @@
 package rage.parqu.questioncreator;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Set;
-import java.util.TreeSet;
 import rage.parqu.abstractquestioncreators.QuestionCreator;
 import rage.parqu.domain.Question;
 import static rage.parqu.util.Randomizer.randomPet;
@@ -60,8 +60,8 @@ public class OverloadedConstructorQuestionCreator extends QuestionCreator {
         return "" + name + " (" + age + " vuotta)";
     }
     
-    private String[] buildAnswers() {
-        Set<String> answers = new TreeSet();
+    private Set<String> buildAnswers() {
+        Set<String> answers = new HashSet();
         
         answers.add(fakeToString(name1, age1) + ", " + fakeToString(name2, 0 ) + ", " + fakeToString("Musti", age2));
         answers.add(fakeToString(name1, age1) + ", " + fakeToString(name2, age1 ) + ", " + fakeToString("Musti", age2));
@@ -71,7 +71,7 @@ public class OverloadedConstructorQuestionCreator extends QuestionCreator {
         answers.add(fakeToString(name1, age1) + ", " + fakeToString(name2, age1) + ", " + fakeToString("Musti", age2));
         answers.add(fakeToString(name1, age1) + ", " + fakeToString(name2, age1) + ", " + fakeToString(name2, age2)); 
         
-        return answers.toArray(new String[0]);
+        return answers;
     }
 
 }

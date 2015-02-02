@@ -1,6 +1,7 @@
 package rage.parqu.domain;
 
 import java.util.Arrays;
+import java.util.UUID;
 import javax.persistence.Entity;
 import org.joda.time.DateTime;
 import org.springframework.data.jpa.domain.AbstractPersistable;
@@ -14,17 +15,35 @@ public class DbAnswer extends AbstractPersistable<Long> {
     private int questionID;
     private String answer;
     private String timeStamp;
+    private UUID answerID;
 
     public DbAnswer() {
     }
 
-    public DbAnswer(String studentID, boolean correct, Object[] parameters, int questionID, String answer, DateTime timeStamp) {
+    public DbAnswer(String studentID, boolean correct, Object[] parameters, int questionID, String answer, DateTime timeStamp, UUID answerID) {
         this.studentID = studentID;
         this.correct = correct;
         this.questionParameters = Arrays.toString(parameters);
         this.questionID = questionID;
         this.answer = answer;
         this.timeStamp = timeStamp.toString();
+        this.answerID = answerID;
+    }
+
+    public String getTimeStamp() {
+        return timeStamp;
+    }
+
+    public void setTimeStamp(String timeStamp) {
+        this.timeStamp = timeStamp;
+    }
+
+    public UUID getAnswerID() {
+        return answerID;
+    }
+
+    public void setAnswerID(UUID answerID) {
+        this.answerID = answerID;
     }
 
     public String getStudentID() {

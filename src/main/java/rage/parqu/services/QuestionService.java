@@ -63,7 +63,7 @@ public class QuestionService {
 
         questionsOnHold.put(newQuestion.getAnswerID(), newQuestion);
         
-        requestRepository.save(new DbRequest(studentID, newQuestion.getParameters(), id, new DateTime()));
+        requestRepository.save(new DbRequest(studentID, id, new DateTime(), newQuestion.getAnswerID()));
 
         return newQuestion;
     }
@@ -82,7 +82,7 @@ public class QuestionService {
         }
 
         boolean correct = question.getCorrectAnswer().equals(check.getAnswer());
-        answerRepository.save(new DbAnswer(check.getStudentID(), correct, question.getParameters(), check.getQuestionID(), check.getAnswer(), new DateTime()));
+        answerRepository.save(new DbAnswer(check.getStudentID(), correct, question.getParameters(), check.getQuestionID(), check.getAnswer(), new DateTime(), question.getAnswerID()));
         if (correct) {
             questionsOnHold.remove(check.getAnswerID());
         }

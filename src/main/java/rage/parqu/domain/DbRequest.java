@@ -1,6 +1,6 @@
 package rage.parqu.domain;
 
-import java.util.Arrays;
+import java.util.UUID;
 import javax.persistence.Entity;
 import org.joda.time.DateTime;
 import org.springframework.data.jpa.domain.AbstractPersistable;
@@ -9,18 +9,26 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 public class DbRequest extends AbstractPersistable<Long>{
     
     private String studentID;
-    private String questionParameters;
     private int questionID;
     private String timeStamp;
+    private UUID answerID;
 
     public DbRequest() {
     }
 
-    public DbRequest(String studentID, Object[] parameters, int questionID, DateTime timeStamp) {
+    public DbRequest(String studentID, int questionID, DateTime timeStamp, UUID answerID) {
         this.studentID = studentID;
-        this.questionParameters = Arrays.toString(parameters);
         this.questionID = questionID;
+        this.answerID = answerID;
         this.timeStamp = timeStamp.toString();
+    }
+
+    public UUID getAnswerID() {
+        return answerID;
+    }
+
+    public void setAnswerID(UUID answerID) {
+        this.answerID = answerID;
     }
 
     public String getStudentID() {
@@ -29,14 +37,6 @@ public class DbRequest extends AbstractPersistable<Long>{
 
     public void setStudentID(String studentID) {
         this.studentID = studentID;
-    }
-
-    public String getQuestionParameters() {
-        return questionParameters;
-    }
-
-    public void setQuestionParameters(String questionParameters) {
-        this.questionParameters = questionParameters;
     }
 
     public int getQuestionID() {

@@ -7,8 +7,8 @@ import static rage.parqu.util.Randomizer.*;
 
 public class TimeMachineQuestionCreator extends QuestionCreator {
 
-    private int startingYear;
-    private int modifier;
+    protected int startingYear;
+    protected int modifier;
     private String passenger;
     private String timeMachineName;
 

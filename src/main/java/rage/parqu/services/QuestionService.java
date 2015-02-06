@@ -55,7 +55,7 @@ public class QuestionService {
         creators.put(20, new OverloadingMethodQuestionCreator());
         creators.put(21, new ObjectWithListAccessQuestionCreator());
         creators.put(22, new OverloadedConstructorQuestionCreator());
-
+        creators.put(23, new CloneTimeMachineQuestionCreator());
     }
 
     public Question createNewQuestion(Integer id, String studentID) {

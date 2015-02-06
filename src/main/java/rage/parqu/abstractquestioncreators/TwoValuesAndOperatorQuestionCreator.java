@@ -6,17 +6,17 @@ import rage.parqu.util.Operator;
 import static rage.parqu.util.Randomizer.randomOperator;
 import static rage.parqu.util.Randomizer.randomSmallPositiveInteger;
 
-public abstract class ValuesAndOperatorQuestionCreator extends QuestionCreator{
+public abstract class TwoValuesAndOperatorQuestionCreator extends QuestionCreator{
     
-    protected int first;
-    protected int second;
+    protected int startingValue;
+    protected int firstModifier;
     protected Operator operator;
 
     @Override
     protected void randomizeParameters() {
-        first = randomSmallPositiveInteger();
-        second = randomSmallPositiveInteger();
-        if(first == second){
+        startingValue = randomSmallPositiveInteger();
+        firstModifier = randomSmallPositiveInteger();
+        if(startingValue == firstModifier){
             randomizeParameters();
         }
         operator = randomOperator();
@@ -26,8 +26,8 @@ public abstract class ValuesAndOperatorQuestionCreator extends QuestionCreator{
     protected HashMap<String, Object> setUpScope() {
         HashMap<String, Object> scopes = new HashMap<>();
         scopes.put("operator", operator.toString());
-        scopes.put("value", first);
-        scopes.put("modifier", second);
+        scopes.put("value", startingValue);
+        scopes.put("first", firstModifier);
         
         return scopes;    
     }
@@ -36,16 +36,16 @@ public abstract class ValuesAndOperatorQuestionCreator extends QuestionCreator{
     protected Question setUpQuestionAndAnswers() {
         Question question = new Question();
         question.setQuestionText("Mikä numero tulostetaan?");
-        question.setAnswers("" + (first + second), "" + (first - second), "" + (second - first), "" + first, "" + second);
+        question.setAnswers("" + (startingValue + firstModifier), "" + (startingValue - firstModifier), "" + (firstModifier - startingValue), "" + startingValue, "" + firstModifier);
         return question;       
     }
 
     @Override
     protected String determineRightAnswer() {
         if(operator == Operator.PLUS){
-            return "" + (first + second);
+            return "" + (startingValue + firstModifier);
         } else if (operator == Operator.MINUS){
-            return "" + (first - second);
+            return "" + (startingValue - firstModifier);
         } else {
             return "töttöröö";
         }    

@@ -97,13 +97,71 @@ public class QuestionCreatorTest {
     }
     
     @Test
+    public void bankHasParametersInTheQuestionCode(){
+        assertTrue(parametersAreInTheCode(questionService.createNewQuestion(1, "testimies")));  
+    }
+    
+    @Test
+    public void classCalculatorHasParametersInTheQuestionCode(){
+        assertTrue(parametersAreInTheCode(questionService.createNewQuestion(2, "testimies")));  
+    }
+    
+    @Test
+    public void simpleInsertHasParametersInTheQuestionCode(){
+        assertTrue(parametersAreInTheCode(questionService.createNewQuestion(3, "testimies")));  
+    }
+    
+    @Test
+    public void simpleCalculationHasParametersInTheQuestionCode(){
+        assertTrue(parametersAreInTheCode(questionService.createNewQuestion(4, "testimies")));  
+    }
+    
+    @Test
+    public void stringsAndNumbersHasParametersInTheQuestionCode(){
+        assertTrue(parametersAreInTheCode(questionService.createNewQuestion(5, "testimies")));  
+    }
+    
+    @Test
+    public void simpleWhileHasParametersInTheQuestionCode(){
+        assertTrue(parametersAreInTheCode(questionService.createNewQuestion(6, "testimies")));  
+    }
+    
+    @Test
+    public void whileMethodHasParametersInTheQuestionCode(){
+        assertTrue(parametersAreInTheCode(questionService.createNewQuestion(7, "testimies")));  
+    }
+    
+    @Test
+    public void whileMethodPrintHasParametersInTheQuestionCode(){
+        assertTrue(parametersAreInTheCode(questionService.createNewQuestion(8, "testimies")));  
+    }
+    
+    @Test
+    public void arrayListIndexHasParametersInTheQuestionCode(){
+        assertTrue(parametersAreInTheCode(questionService.createNewQuestion(9, "testimies")));  
+    }
+    
+    @Test
+    public void editValueHasParametersInTheQuestionCode(){
+        assertTrue(parametersAreInTheCode(questionService.createNewQuestion(10, "testimies")));  
+    }
+    
+//            creators.put(4, new SimpleCalculationQuestionCreator());
+//        creators.put(5, new StringsAndNumbersQuestionCreator());
+//        creators.put(6, new SimpleWhileQuestionCreator());
+//        creators.put(7, new WhileMethodQuestionCreator());
+//        creators.put(8, new WhileMethodPrintVersionQuestionCreator());
+//        creators.put(9, new ArrayListIndexQuestionCreator());
+//        creators.put(10, new EditValueQuestionCreator());
+    
+    @Test
     public void parametersAreInTheQuestionCode(){
         for (int i = 1; i <= 23; i++) {
             assertTrue(parametersAreInTheCode(questionService.createNewQuestion(i, "testimies")));  
         }
     }
     
-        @Test
+    @Test
     public void firstTenQuestionsParametersAreInTheQuestionCode(){
         for (int i = 1; i <= 10; i++) {
             assertTrue(parametersAreInTheCode(questionService.createNewQuestion(i, "testimies")));  

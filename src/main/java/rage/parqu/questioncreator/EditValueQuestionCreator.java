@@ -1,8 +1,8 @@
 package rage.parqu.questioncreator;
 
-import rage.parqu.abstractquestioncreators.ValuesAndOperatorQuestionCreator;
+import rage.parqu.abstractquestioncreators.TwoValuesAndOperatorQuestionCreator;
 
-public class EditValueQuestionCreator extends ValuesAndOperatorQuestionCreator{
+public class EditValueQuestionCreator extends TwoValuesAndOperatorQuestionCreator{
     
     public EditValueQuestionCreator(){
         super.setTemplateName("editvalue.mustache");
@@ -10,6 +10,6 @@ public class EditValueQuestionCreator extends ValuesAndOperatorQuestionCreator{
 
     @Override
     protected String determineRightAnswer() {
-        return "" + first;
+        return "" + startingValue;
     }
 }

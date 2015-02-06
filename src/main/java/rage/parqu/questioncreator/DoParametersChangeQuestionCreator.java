@@ -1,8 +1,8 @@
 package rage.parqu.questioncreator;
 
-import rage.parqu.abstractquestioncreators.ValuesAndOperatorQuestionCreator;
+import rage.parqu.abstractquestioncreators.TwoValuesAndOperatorQuestionCreator;
 
-public class DoParametersChangeQuestionCreator extends ValuesAndOperatorQuestionCreator{
+public class DoParametersChangeQuestionCreator extends TwoValuesAndOperatorQuestionCreator{
     
     public DoParametersChangeQuestionCreator(){
         super.setTemplateName("doparameterschange.mustache");
@@ -10,6 +10,6 @@ public class DoParametersChangeQuestionCreator extends ValuesAndOperatorQuestion
 
     @Override
     public String determineRightAnswer(){
-        return "" + super.second;
+        return "" + super.firstModifier;
     }
 }

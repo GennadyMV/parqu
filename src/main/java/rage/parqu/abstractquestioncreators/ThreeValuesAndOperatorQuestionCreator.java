@@ -3,15 +3,15 @@ package rage.parqu.abstractquestioncreators;
 import java.util.HashMap;
 import static rage.parqu.util.Randomizer.randomPositiveIntegerExclusive;
 
-public abstract class ThreeValueQuestionCreator extends ValuesAndOperatorQuestionCreator{
+public abstract class ThreeValuesAndOperatorQuestionCreator extends TwoValuesAndOperatorQuestionCreator{
     
-    protected int startingValue;
+    protected int secondModifier;
     
     @Override
     protected void randomizeParameters() {
         super.randomizeParameters();
-        startingValue = randomPositiveIntegerExclusive(15);
-        if(startingValue == first || startingValue == second){
+        secondModifier = randomPositiveIntegerExclusive(15);
+        if(secondModifier == startingValue || secondModifier == firstModifier){
             randomizeParameters();
         }
     }
@@ -19,7 +19,7 @@ public abstract class ThreeValueQuestionCreator extends ValuesAndOperatorQuestio
     @Override
     protected HashMap<String, Object> setUpScope() {
         HashMap<String, Object> scopes = super.setUpScope();
-        scopes.put("value", startingValue);
+        scopes.put("second", secondModifier);
         return scopes;    
     }
 

@@ -1,10 +1,10 @@
 package rage.parqu.questioncreator;
 
-import rage.parqu.abstractquestioncreators.ThreeValueQuestionCreator;
+import rage.parqu.abstractquestioncreators.ThreeValuesAndOperatorQuestionCreator;
 import rage.parqu.domain.Question;
 import rage.parqu.util.Operator;
 
-public class VariableVisibilityQuestionCreator extends ThreeValueQuestionCreator{
+public class VariableVisibilityQuestionCreator extends ThreeValuesAndOperatorQuestionCreator{
     
     public VariableVisibilityQuestionCreator() {
         super.setTemplateName("variablevisibility.mustache");
@@ -14,16 +14,16 @@ public class VariableVisibilityQuestionCreator extends ThreeValueQuestionCreator
     protected Question setUpQuestionAndAnswers() {
         Question question = new Question();
         question.setQuestionText("Mikä arvo tulostetaan?");
-        question.setAnswers("" + first, "" + second, "" + startingValue, "" + (startingValue + first), "" + (startingValue - second), "" + (startingValue + second), "" + (startingValue + first + second), "" + (startingValue + first - second));
+        question.setAnswers("" + startingValue, "" + firstModifier, "" + secondModifier, "" + (secondModifier + startingValue), "" + (secondModifier - firstModifier), "" + (secondModifier + firstModifier), "" + (secondModifier + startingValue + firstModifier), "" + (secondModifier + startingValue - firstModifier));
         return question;       
     }
 
     @Override
     protected String determineRightAnswer() {
         if(operator == Operator.PLUS){
-            return "" + (startingValue + second);
+            return "" + (startingValue + firstModifier);
         } else if (operator == Operator.MINUS){
-            return "" + (startingValue - second);
+            return "" + (startingValue - firstModifier);
         } else {
             return "töttöröö";
         }        

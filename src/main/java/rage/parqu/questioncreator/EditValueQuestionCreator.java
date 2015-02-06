@@ -10,6 +10,6 @@ public class EditValueQuestionCreator extends ValuesAndOperatorQuestionCreator{
 
     @Override
     protected String determineRightAnswer() {
-        return "" + value;
+        return "" + first;
     }
 }

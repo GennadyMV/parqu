@@ -8,15 +8,15 @@ import static rage.parqu.util.Randomizer.randomSmallPositiveInteger;
 
 public abstract class ValuesAndOperatorQuestionCreator extends QuestionCreator{
     
-    protected int value;
-    protected int modifier;
-    private Operator operator;
+    protected int first;
+    protected int second;
+    protected Operator operator;
 
     @Override
     protected void randomizeParameters() {
-        value = randomSmallPositiveInteger();
-        modifier = randomSmallPositiveInteger();
-        if(value == modifier){
+        first = randomSmallPositiveInteger();
+        second = randomSmallPositiveInteger();
+        if(first == second){
             randomizeParameters();
         }
         operator = randomOperator();
@@ -26,8 +26,8 @@ public abstract class ValuesAndOperatorQuestionCreator extends QuestionCreator{
     protected HashMap<String, Object> setUpScope() {
         HashMap<String, Object> scopes = new HashMap<>();
         scopes.put("operator", operator.toString());
-        scopes.put("value", value);
-        scopes.put("modifier", modifier);
+        scopes.put("value", first);
+        scopes.put("modifier", second);
         
         return scopes;    
     }
@@ -36,16 +36,16 @@ public abstract class ValuesAndOperatorQuestionCreator extends QuestionCreator{
     protected Question setUpQuestionAndAnswers() {
         Question question = new Question();
         question.setQuestionText("Mikä numero tulostetaan?");
-        question.setAnswers("" + (value + modifier), "" + (value - modifier), "" + (modifier - value), "" + value, "" + modifier);
+        question.setAnswers("" + (first + second), "" + (first - second), "" + (second - first), "" + first, "" + second);
         return question;       
     }
 
     @Override
     protected String determineRightAnswer() {
         if(operator == Operator.PLUS){
-            return "" + (value + modifier);
+            return "" + (first + second);
         } else if (operator == Operator.MINUS){
-            return "" + (value - modifier);
+            return "" + (first - second);
         } else {
             return "töttöröö";
         }    

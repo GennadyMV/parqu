@@ -53,7 +53,7 @@ public class OverloadedConstructorQuestionCreator extends QuestionCreator {
 
     @Override
     protected String determineRightAnswer() {
-        return fakeToString(name1, age1) + ", " + fakeToString(name2, 0 ) + ", " + fakeToString("Musti", age2);
+        return fakeToString(name1, age1) + ", " + fakeToString(name2, 0 ) + ", " + fakeToString("Musti", age2)+ ", ";
     }
     
     private String fakeToString(String name, int age){

@@ -10,6 +10,6 @@ public class DoParametersChangeQuestionCreator extends ValuesAndOperatorQuestion
 
     @Override
     public String determineRightAnswer(){
-        return "" + super.modifier;
+        return "" + super.second;
     }
 }

@@ -8,10 +8,6 @@ public abstract class TwoValueQuestionCreator extends QuestionCreator{
     protected int first;
     protected int second;
 
-    public TwoValueQuestionCreator() {
-        super.setTemplateName("simpleinsertion.mustache");
-    }
-
     @Override
     protected void randomizeParameters() {
         first = randomSmallPositiveInteger();

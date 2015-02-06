@@ -77,12 +77,12 @@ public class QuestionCreatorTest {
     }
     
     @Test
-    public void ObjectWithListAccessQuestionHasRightAnswerInOptions(){
+    public void objectWithListAccessQuestionHasRightAnswerInOptions(){
         assertTrue(rightAnswerExists(questionService.createNewQuestion(21, "testimies")));  
     }
     
     @Test
-    public void OverloadedConstructorQuestionHasRightAnswerInOptions(){
+    public void overloadedConstructorQuestionHasRightAnswerInOptions(){
         assertTrue(rightAnswerExists(questionService.createNewQuestion(22, "testimies")));  
     }
     
@@ -95,6 +95,34 @@ public class QuestionCreatorTest {
     public void bankQuestionHasRightAnswerInOptions(){
         assertTrue(rightAnswerExists(questionService.createNewQuestion(1, "testimies")));  
     }
+    
+    @Test
+    public void parametersAreInTheQuestionCode(){
+        for (int i = 1; i <= 23; i++) {
+            assertTrue(parametersAreInTheCode(questionService.createNewQuestion(i, "testimies")));  
+        }
+    }
+    
+        @Test
+    public void firstTenQuestionsParametersAreInTheQuestionCode(){
+        for (int i = 1; i <= 10; i++) {
+            assertTrue(parametersAreInTheCode(questionService.createNewQuestion(i, "testimies")));  
+        }
+    }
+    
+    @Test
+    public void elevenToTwentyQuestionsParametersAreInTheQuestionCode(){
+        for (int i = 11; i <= 20; i++) {
+            assertTrue(parametersAreInTheCode(questionService.createNewQuestion(i, "testimies")));  
+        }
+    }
+    
+    @Test
+    public void twentyToThirtyQuestionsParametersAreInTheQuestionCode(){
+        for (int i = 21; i <= 23; i++) {
+            assertTrue(parametersAreInTheCode(questionService.createNewQuestion(i, "testimies")));  
+        }
+    }
 
     private boolean rightAnswerExists(Question question) {
         for (String string : question.getAnswers()) {
@@ -103,5 +131,14 @@ public class QuestionCreatorTest {
             }
         }
         return false;
+    }
+
+    private boolean parametersAreInTheCode(Question question) {
+        for (Object object : question.getParameters()) {
+            if(!question.getCode().contains(object.toString())){
+                return false;
+            }
+        }
+        return true;
     }
 }

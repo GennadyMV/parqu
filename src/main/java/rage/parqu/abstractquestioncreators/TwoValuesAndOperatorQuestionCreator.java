@@ -4,30 +4,21 @@ import java.util.HashMap;
 import rage.parqu.domain.Question;
 import rage.parqu.util.Operator;
 import static rage.parqu.util.Randomizer.randomOperator;
-import static rage.parqu.util.Randomizer.randomSmallPositiveInteger;
 
-public abstract class TwoValuesAndOperatorQuestionCreator extends QuestionCreator{
-    
-    protected int startingValue;
-    protected int firstModifier;
+public abstract class TwoValuesAndOperatorQuestionCreator extends TwoValueQuestionCreator{
+
     protected Operator operator;
 
     @Override
     protected void randomizeParameters() {
-        startingValue = randomSmallPositiveInteger();
-        firstModifier = randomSmallPositiveInteger();
-        if(startingValue == firstModifier){
-            randomizeParameters();
-        }
+        super.randomizeParameters();
         operator = randomOperator();
     }
 
     @Override
     protected HashMap<String, Object> setUpScope() {
-        HashMap<String, Object> scopes = new HashMap<>();
+        HashMap<String, Object> scopes = super.setUpScope();
         scopes.put("operator", operator.toString());
-        scopes.put("value", startingValue);
-        scopes.put("first", firstModifier);
         
         return scopes;    
     }

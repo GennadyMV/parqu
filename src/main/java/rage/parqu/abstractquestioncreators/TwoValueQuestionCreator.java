@@ -5,14 +5,14 @@ import static rage.parqu.util.Randomizer.randomSmallPositiveInteger;
 
 public abstract class TwoValueQuestionCreator extends QuestionCreator{
 
-    protected int first;
-    protected int second;
+    protected int startingValue;
+    protected int firstModifier;
 
     @Override
     protected void randomizeParameters() {
-        first = randomSmallPositiveInteger();
-        second = randomSmallPositiveInteger();
-        if(first == second){
+        startingValue = randomSmallPositiveInteger();
+        firstModifier = randomSmallPositiveInteger();
+        if(startingValue == firstModifier){
             randomizeParameters();
         }
     }
@@ -20,8 +20,8 @@ public abstract class TwoValueQuestionCreator extends QuestionCreator{
     @Override
     protected HashMap<String, Object> setUpScope() {
         HashMap<String, Object> scopes = new HashMap<>();
-        scopes.put("first", first);
-        scopes.put("second", second);
+        scopes.put("value", startingValue);
+        scopes.put("first", firstModifier);
         
         return scopes;    
     }

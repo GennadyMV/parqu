@@ -22,20 +22,20 @@ public class OverloadingMethodQuestionCreator extends TwoValueQuestionCreator {
     private Set<String> buildAnswers() {
         Set<String> answers = new HashSet();
 
-        answers.add(first + "");
-        answers.add(second + "");
-        answers.add((first + 2) + "");
-        answers.add((second + 2) + "");
-        answers.add((first + second + 2) + "");
-        answers.add((second + first) + "");
-        answers.add((second * 3 + first) + "");
+        answers.add(startingValue + "");
+        answers.add(firstModifier + "");
+        answers.add((startingValue + 2) + "");
+        answers.add((firstModifier + 2) + "");
+        answers.add((startingValue + firstModifier + 2) + "");
+        answers.add((firstModifier + startingValue) + "");
+        answers.add((firstModifier * 3 + startingValue) + "");
 
         return answers;
     }
 
     @Override
     protected String determineRightAnswer() {
-        return "" + (first + second + 2);
+        return "" + (startingValue + firstModifier + 2);
     }
 
 }

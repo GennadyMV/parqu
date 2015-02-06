@@ -13,13 +13,13 @@ public class SimpleInsertQuestionCreator extends TwoValueQuestionCreator{
     protected Question setUpQuestionAndAnswers() {
         Question question = new Question();
         question.setQuestionText("Mikä numero tulostetaan?");
-        question.setAnswers("" + (first + second), "" + (first - second), "" + first, "" + second);
+        question.setAnswers("" + (startingValue + firstModifier), "" + (startingValue - firstModifier), "" + startingValue, "" + firstModifier);
         return question;       
     }
 
     @Override
     protected String determineRightAnswer() {
-        return "" + second;
+        return "" + firstModifier;
     }
     
 }

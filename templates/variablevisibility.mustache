@@ -1,12 +1,12 @@
 public static void main(String[] args) {
     int luku = {{value}};
-    muokkaaLukua(luku);
+    kasvataLukua(luku);
     if(true) {
-        luku = luku + {{second}};
+        luku = luku {{operator}} {{first}};
     }
     System.out.println(luku);
 }
 
-public static void muokkaaLukua(int luku) {
-    luku = luku {{operator}} {{first}};
+public static void kasvataLukua(int luku) {
+    luku = luku + {{second}};
 }

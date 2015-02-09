@@ -14,7 +14,7 @@ public class VariableVisibilityQuestionCreator extends ThreeValuesAndOperatorQue
     protected Question setUpQuestionAndAnswers() {
         Question question = new Question();
         question.setQuestionText("Mikä arvo tulostetaan?");
-        question.setAnswers("" + startingValue, "" + firstModifier, "" + secondModifier, "" + (secondModifier + startingValue), "" + (secondModifier - firstModifier), "" + (secondModifier + firstModifier), "" + (secondModifier + startingValue + firstModifier), "" + (secondModifier + startingValue - firstModifier));
+        question.setAnswers("" + startingValue, "" + firstModifier, "" + secondModifier, "" + (firstModifier + startingValue), "" + (startingValue - firstModifier), "" + (secondModifier + startingValue), "" + (secondModifier + startingValue + firstModifier), "" + (secondModifier + startingValue - firstModifier));
         return question;       
     }
 

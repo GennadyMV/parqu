@@ -56,6 +56,7 @@ public class QuestionService {
         creators.put(21, new ObjectWithListAccessQuestionCreator());
         creators.put(22, new OverloadedConstructorQuestionCreator());
         creators.put(23, new CloneTimeMachineQuestionCreator());
+        creators.put(24, new VariableVisibilityQuestionCreator());
     }
 
     public Question createNewQuestion(Integer id, String studentID) {
@@ -108,4 +109,10 @@ public class QuestionService {
         
         return hours.getHours() > 24;
     }
+
+    public HashMap<Integer, QuestionCreator> getCreators() {
+        return creators;
+    }
+
+
 }

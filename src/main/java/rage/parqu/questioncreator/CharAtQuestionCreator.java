@@ -69,14 +69,12 @@ public class CharAtQuestionCreator extends QuestionCreator{
     }
 
     private int determineStartingIndex(String string, int index) {
-        if(index == 0){
-            return 0;
-        } else if(string.equals("Leo")){
+        if(index == 0 || string.length() < 4){
             return 0;
         } else if (index >= (string.length() - 2)){
             return string.length() - 3;
         } 
-        return 0;
+        return index;
     }
     
 }

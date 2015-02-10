@@ -36,7 +36,7 @@ public class ForArrayQuestionCreator extends QuestionCreator {
     protected HashMap<String, Object> setUpScope() {
         HashMap<String, Object> scopes = new HashMap<>();
         for (int i = 0; i < numbers.size(); i++) {
-            scopes.put("value" + (i+1), numbers.get(i));
+            scopes.put("value" + (i + 1), numbers.get(i));
         }
         scopes.put("steps", steps);
         scopes.put("startingValue", startingValue);
@@ -53,7 +53,7 @@ public class ForArrayQuestionCreator extends QuestionCreator {
 
     @Override
     protected String determineRightAnswer() {
-        if(steps + startingValue < numbers.size() - 1){
+        if (steps + startingValue < numbers.size() - 1) {
             return "" + numbers.get(steps + startingValue);
         } else {
             return "Ohjelma ei printtaa mitään";
@@ -66,9 +66,9 @@ public class ForArrayQuestionCreator extends QuestionCreator {
         for (Integer number : numbers) {
             answers.add("" + number);
         }
-        
+
         answers.add("Ohjelma ei printtaa mitään");
-        
+
         return answers;
     }
 }

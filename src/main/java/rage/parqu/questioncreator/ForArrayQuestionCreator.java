@@ -16,7 +16,7 @@ public class ForArrayQuestionCreator extends QuestionCreator {
     private int startingValue;
 
     public ForArrayQuestionCreator() {
-        super.setTemplateName("integerlistremove.mustache");
+        super.setTemplateName("forarray.mustache");
     }
 
     @Override

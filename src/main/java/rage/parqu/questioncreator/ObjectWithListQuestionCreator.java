@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import rage.parqu.abstractquestioncreators.QuestionCreator;
 import rage.parqu.domain.Question;
-import static rage.parqu.util.Randomizer.randomPositiveIntegerInclusive;
+import static rage.parqu.util.Randomizer.randomPositiveIntegerFromZero;
 
 public class ObjectWithListQuestionCreator extends QuestionCreator {
 
@@ -21,7 +21,7 @@ public class ObjectWithListQuestionCreator extends QuestionCreator {
     protected void randomizeParameters() {
         numbers = new ArrayList();
         while (numbers.size() < 6) {
-            int newNumber = randomPositiveIntegerInclusive(8);
+            int newNumber = randomPositiveIntegerFromZero(8);
             if (!numbers.contains(newNumber)) {
                 numbers.add(newNumber);
             }
@@ -30,7 +30,7 @@ public class ObjectWithListQuestionCreator extends QuestionCreator {
         if(index == numbers.get(index)){
             randomizeParameters();
         }
-        index2 = index + randomPositiveIntegerInclusive((numbers.size() - index) - 2);
+        index2 = index + randomPositiveIntegerFromZero((numbers.size() - index) - 2);
         if(index2 == numbers.get(index2 + 1)){
             randomizeParameters();
         }

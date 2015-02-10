@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.Set;
 import rage.parqu.abstractquestioncreators.QuestionCreator;
 import rage.parqu.domain.Question;
-import static rage.parqu.util.Randomizer.randomPositiveIntegerInclusive;
+import static rage.parqu.util.Randomizer.randomPositiveIntegerFromZero;
 import static rage.parqu.util.Randomizer.randomString;
 
 public class CharAtQuestionCreator extends QuestionCreator{
@@ -24,8 +24,8 @@ public class CharAtQuestionCreator extends QuestionCreator{
         first = randomString();
         second = randomString();
         if(!first.equals(second)){
-            firstIndex = randomPositiveIntegerInclusive(first.length() - 1);
-            secondIndex = randomPositiveIntegerInclusive(second.length()- 1);
+            firstIndex = randomPositiveIntegerFromZero(first.length() - 1);
+            secondIndex = randomPositiveIntegerFromZero(second.length()- 1);
         } else {
             randomizeParameters();  
         }

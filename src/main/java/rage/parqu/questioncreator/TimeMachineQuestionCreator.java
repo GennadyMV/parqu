@@ -18,8 +18,8 @@ public class TimeMachineQuestionCreator extends QuestionCreator {
 
     @Override
     protected void randomizeParameters() {
-        startingYear = 1985 + randomPositiveIntegerInclusive(30) * positiveOrNegative();
-        modifier = randomPositiveIntegerExclusive(30) * positiveOrNegative();
+        startingYear = 1985 + randomPositiveIntegerFromZero(30) * positiveOrNegative();
+        modifier = randomPositiveIntegerFromOne(30) * positiveOrNegative();
         passenger = randomPassenger().toLowerCase();
         timeMachineName = randomTimeMachine();
     }

@@ -1,7 +1,7 @@
 package rage.parqu.abstractquestioncreators;
 
 import java.util.HashMap;
-import static rage.parqu.util.Randomizer.randomPositiveIntegerExclusive;
+import static rage.parqu.util.Randomizer.randomPositiveIntegerFromOne;
 
 public abstract class ThreeValuesAndOperatorQuestionCreator extends TwoValuesAndOperatorQuestionCreator{
     
@@ -10,7 +10,7 @@ public abstract class ThreeValuesAndOperatorQuestionCreator extends TwoValuesAnd
     @Override
     protected void randomizeParameters() {
         super.randomizeParameters();
-        secondModifier = randomPositiveIntegerExclusive(15);
+        secondModifier = randomPositiveIntegerFromOne(15);
         if(secondModifier == startingValue || secondModifier == firstModifier){
             randomizeParameters();
         }

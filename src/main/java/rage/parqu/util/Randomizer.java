@@ -26,11 +26,17 @@ public class Randomizer {
      * @param highestValue
      * @return 
      */
-    public static int randomPositiveIntegerInclusive(int highestValue){
+    public static int randomPositiveIntegerFromZero(int highestValue){
         return random.nextInt(highestValue + 1);
     }
     
-    public static int randomPositiveIntegerExclusive(int highestValue){
+    /**
+     * Return a random value from 1 to the given value. With 4, it returns 1-4.
+     * 
+     * @param highestValue
+     * @return 
+     */
+    public static int randomPositiveIntegerFromOne(int highestValue){
         return random.nextInt(highestValue) + 1;
     }
     

@@ -57,6 +57,7 @@ public class QuestionService {
         creators.put(22, new OverloadedConstructorQuestionCreator());
         creators.put(23, new CloneTimeMachineQuestionCreator());
         creators.put(24, new VariableVisibilityQuestionCreator());
+        creators.put(25, new ForArrayQuestionCreator());
     }
 
     public Question createNewQuestion(Integer id, String studentID) {

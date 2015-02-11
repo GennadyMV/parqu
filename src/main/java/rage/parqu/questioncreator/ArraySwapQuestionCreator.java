@@ -21,6 +21,12 @@ public class ArraySwapQuestionCreator extends QuestionCreator {
 
     @Override
     protected void randomizeParameters() {
+        firstIndex = randomPositiveIntegerFromZero(6);
+        secondIndex = randomPositiveIntegerFromZero(6);
+        if(firstIndex == secondIndex){
+            randomizeParameters();
+        }
+        
         numbers = new ArrayList();
         while (numbers.size() < 7) {
             int newNumber = randomPositiveIntegerFromZero(20);
@@ -28,8 +34,6 @@ public class ArraySwapQuestionCreator extends QuestionCreator {
                 numbers.add(newNumber);
             }
         }
-        firstIndex = randomPositiveIntegerFromZero(6);
-        secondIndex = randomPositiveIntegerFromZero(6);
     }
 
     @Override

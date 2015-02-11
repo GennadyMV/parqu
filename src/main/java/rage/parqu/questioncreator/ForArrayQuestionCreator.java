@@ -53,7 +53,7 @@ public class ForArrayQuestionCreator extends QuestionCreator {
 
     @Override
     protected String determineRightAnswer() {
-        if (steps + startingValue < numbers.size() - 1) {
+        if (steps + startingValue < numbers.size()) {
             return "" + numbers.get(steps + startingValue);
         } else {
             return "Ohjelma ei printtaa mitään";

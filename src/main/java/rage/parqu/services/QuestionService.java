@@ -58,6 +58,7 @@ public class QuestionService {
         creators.put(23, new CloneTimeMachineQuestionCreator());
         creators.put(24, new VariableVisibilityQuestionCreator());
         creators.put(25, new ForArrayQuestionCreator());
+        creators.put(26, new ArraySwapQuestionCreator());
     }
 
     public Question createNewQuestion(Integer id, String studentID) {

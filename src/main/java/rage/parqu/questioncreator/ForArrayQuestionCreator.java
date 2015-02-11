@@ -46,7 +46,7 @@ public class ForArrayQuestionCreator extends QuestionCreator {
     @Override
     protected Question setUpQuestionAndAnswers() {
         Question question = new Question();
-        question.setQuestionText("Mikä numero poistetaan listalta?");
+        question.setQuestionText("Mitä ohjelma tulostaa?");
         question.setAnswers(buildAnswers());
         return question;
     }

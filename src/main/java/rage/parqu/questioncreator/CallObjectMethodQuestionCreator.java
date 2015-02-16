@@ -4,10 +4,7 @@ import rage.parqu.abstractquestioncreators.QuestionCreator;
 import java.util.HashMap;
 import rage.parqu.domain.Question;
 import rage.parqu.util.Operator;
-import rage.parqu.util.Randomizer;
-import static rage.parqu.util.Randomizer.randomFunctionName;
-import static rage.parqu.util.Randomizer.randomOperator;
-import static rage.parqu.util.Randomizer.randomSmallPositiveInteger;
+import static rage.parqu.util.Randomizer.*;
 
 public class CallObjectMethodQuestionCreator extends QuestionCreator{
     
@@ -25,7 +22,7 @@ public class CallObjectMethodQuestionCreator extends QuestionCreator{
         amount = randomSmallPositiveInteger();
         operator = randomOperator();
         function = randomFunctionName();
-        name = Randomizer.randomString().toLowerCase();
+        name = randomString().toLowerCase();
     }
 
     @Override

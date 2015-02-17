@@ -51,22 +51,14 @@ public class ForBorderQuestionCreator extends QuestionCreator {
     @Override
     protected String determineRightAnswer() {
         int stepsFromEdge = ((numbers.size() - loops) - 1);
-        if(stepsFromEdge == 0){
-            return "i < luvut.length";
-        }
-        return "i < luvut.length" + " - " + stepsFromEdge;
+        return "i < " + (numbers.size() - stepsFromEdge);
     }
 
     private Set<String> buildAnswers() {
         Set<String> answers = new HashSet();
-
-        String[] modifiers = {"+ 1", "- 1", "- 2", "- 3", "- 4"};
-        
-        answers.add("i < luvut.length");
-        answers.add("i <= luvut.length");
-        
-        for (String modifier : modifiers) {
-            answers.add("i < luvut.length " + modifier);
+                
+        for (int i = 0; i < 9; i++) {
+            answers.add("i < " + i);
         }
         
         return answers;

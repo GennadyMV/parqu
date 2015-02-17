@@ -76,6 +76,12 @@ public class QuestionCreatorTest {
                 return true;
             }
         }
+        System.out.println("ANSWERS:");
+        for (String answer : question.getAnswers()) {
+            System.out.println(answer);
+        }
+        System.out.println("RIGHT:");
+        System.out.println(question.getCorrectAnswer());
         return false;
     }
 

@@ -50,7 +50,7 @@ public class ForBorderQuestionCreator extends QuestionCreator {
 
     @Override
     protected String determineRightAnswer() {
-        int stepsFromEdge = ((numbers.size() - loops) - 1);
+        int stepsFromEdge = ((numbers.size() - loops));
         return "i < " + (numbers.size() - stepsFromEdge);
     }
 

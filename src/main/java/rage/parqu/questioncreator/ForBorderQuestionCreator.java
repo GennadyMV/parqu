@@ -27,7 +27,7 @@ public class ForBorderQuestionCreator extends QuestionCreator {
                 numbers.add(newNumber);
             }
         }
-        loops = randomPositiveIntegerFromZero(3) + 3;
+        loops = randomPositiveIntegerFromZero(4) + 3;
     }
 
     @Override
@@ -50,7 +50,11 @@ public class ForBorderQuestionCreator extends QuestionCreator {
 
     @Override
     protected String determineRightAnswer() {
-        return "i < luvut.length" + " - " + (numbers.size() - loops);
+        int stepsFromEdge = ((numbers.size() - loops) + 1);
+        if(stepsFromEdge == 0){
+            return "i < luvut.length";
+        }
+        return "i < luvut.length" + " - " + stepsFromEdge;
     }
 
     private Set<String> buildAnswers() {

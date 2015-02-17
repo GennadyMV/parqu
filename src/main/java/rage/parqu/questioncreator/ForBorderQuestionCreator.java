@@ -50,7 +50,7 @@ public class ForBorderQuestionCreator extends QuestionCreator {
 
     @Override
     protected String determineRightAnswer() {
-        int stepsFromEdge = ((numbers.size() - loops) + 1);
+        int stepsFromEdge = ((numbers.size() - loops) - 1);
         if(stepsFromEdge == 0){
             return "i < luvut.length";
         }
@@ -60,7 +60,7 @@ public class ForBorderQuestionCreator extends QuestionCreator {
     private Set<String> buildAnswers() {
         Set<String> answers = new HashSet();
 
-        String[] modifiers = {"+ 1", "- 1", "- 2", "- 3"};
+        String[] modifiers = {"+ 1", "- 1", "- 2", "- 3", "- 4"};
         
         answers.add("i < luvut.length");
         answers.add("i <= luvut.length");

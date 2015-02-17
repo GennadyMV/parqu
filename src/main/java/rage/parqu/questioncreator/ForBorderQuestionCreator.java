@@ -21,13 +21,13 @@ public class ForBorderQuestionCreator extends QuestionCreator {
     @Override
     protected void randomizeParameters() {
         numbers = new ArrayList();
-        while (numbers.size() < 7) {
+        while (numbers.size() < 8) {
             int newNumber = randomPositiveIntegerFromZero(20);
             if (!numbers.contains(newNumber)) {
                 numbers.add(newNumber);
             }
         }
-        loops = randomPositiveIntegerFromZero(4) + 2;
+        loops = randomPositiveIntegerFromZero(3) + 3;
     }
 
     @Override
@@ -43,14 +43,14 @@ public class ForBorderQuestionCreator extends QuestionCreator {
     @Override
     protected Question setUpQuestionAndAnswers() {
         Question question = new Question();
-        question.setQuestionText("Korvaa kohta \"xxxxxx\" koodirivillä. Millä rivillä ohjelma tulostaa \"Oikein!\" ");
+        question.setQuestionText("Korvaa kohta \"xxxxxx\" koodirivillä. Millä rivillä ohjelma tulostaa \"Oikein!\"?");
         question.setAnswers(buildAnswers());
         return question;
     }
 
     @Override
     protected String determineRightAnswer() {
-        return "i < luvut.length" + "- " + (numbers.size() - loops);
+        return "i < luvut.length" + " - " + (numbers.size() - loops);
     }
 
     private Set<String> buildAnswers() {

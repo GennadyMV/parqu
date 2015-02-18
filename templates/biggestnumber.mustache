@@ -1,0 +1,18 @@
+public static void main(String[] args) {
+    {{=<% %>=}}
+    int[] luvut = {<%value1%>, <%value2%>, <%value3%>, <%value4%>, <%value5%>, <%value6%>, <%value7%>};
+    <%={{ }}=%>
+
+    System.out.println(suurinLuku(luvut));
+}
+
+public static int suurinLuku(int[] luvut) {
+    int suurin = 0;
+    for (int i = 0; i < luvut.length; i++) {
+        int luku = luvut[i];
+        if (xxxxxx) {
+            suurin = luku;
+        }
+    }
+    return suurin;
+}

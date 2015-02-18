@@ -9,25 +9,23 @@ import rage.parqu.abstractquestioncreators.QuestionCreator;
 import rage.parqu.domain.Question;
 import static rage.parqu.util.Randomizer.randomPositiveIntegerFromZero;
 
-public class ForBorderQuestionCreator extends QuestionCreator {
+public class BiggestNumberQuestionCreator extends QuestionCreator {
 
     private List<Integer> numbers;
-    private int loops;
 
-    public ForBorderQuestionCreator() {
-        super.setTemplateName("forborder.mustache");
+    public BiggestNumberQuestionCreator() {
+        super.setTemplateName("forarray.mustache");
     }
 
     @Override
     protected void randomizeParameters() {
         numbers = new ArrayList();
-        while (numbers.size() < 8) {
+        while (numbers.size() < 7) {
             int newNumber = randomPositiveIntegerFromZero(20);
             if (!numbers.contains(newNumber)) {
                 numbers.add(newNumber);
             }
         }
-        loops = randomPositiveIntegerFromZero(4) + 3;
     }
 
     @Override
@@ -36,30 +34,34 @@ public class ForBorderQuestionCreator extends QuestionCreator {
         for (int i = 0; i < numbers.size(); i++) {
             scopes.put("value" + (i + 1), numbers.get(i));
         }
-        scopes.put("loops", loops);
         return scopes;
     }
 
     @Override
     protected Question setUpQuestionAndAnswers() {
         Question question = new Question();
-        question.setQuestionText("Korvaa kohta \"xxxxxx\" koodipätkällä. Millä näistä ohjelma tulostaa \"Oikein!\"?");
+        question.setQuestionText("Millä koodipätkällä suurinLuku-metodi toimii oikein?");
         question.setAnswers(buildAnswers());
         return question;
     }
 
     @Override
     protected String determineRightAnswer() {
-        int stepsFromEdge = ((numbers.size() - loops));
-        return "i <= " + ((numbers.size() - stepsFromEdge) - 1);
+        return "luku > suurin";
     }
 
     private Set<String> buildAnswers() {
         Set<String> answers = new HashSet();
-                
-        for (int i = 0; i < 9; i++) {
-            answers.add("i <= " + i);
-        }
+
+        answers.add("luku > suurin");
+        answers.add("luku < suurin");
+        answers.add("luku <= suurin");
+        answers.add("suurin > luku");
+        answers.add("suurin >= luku");
+        answers.add("luku > luvut[i]");
+        answers.add("luku < luvut[i]");
+        answers.add("luvut > suurin");
+        answers.add("luvut.length > suurin");
         
         return answers;
     }

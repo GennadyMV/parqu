@@ -60,6 +60,7 @@ public class QuestionService {
         creators.put(25, new ForArrayQuestionCreator());
         creators.put(26, new ArraySwapQuestionCreator());
         creators.put(27, new ForBorderQuestionCreator());
+        creators.put(28, new BiggestNumberQuestionCreator());
     }
 
     public Question createNewQuestion(Integer id, String studentID) {

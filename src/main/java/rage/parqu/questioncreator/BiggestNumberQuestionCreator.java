@@ -59,9 +59,7 @@ public class BiggestNumberQuestionCreator extends QuestionCreator {
 
         answers.add(variableName + " > suurin");
         answers.add(variableName + " < suurin");
-        answers.add(variableName + " <= suurin");
         answers.add("suurin > " + variableName);
-        answers.add("suurin >= " + variableName);
         answers.add(variableName + " > luvut[i]");
         answers.add(variableName + " < luvut[i]");
         answers.add("luvut > suurin");

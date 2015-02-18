@@ -10,6 +10,7 @@ public class Randomizer {
     private static final String[] passengers = {"Marty", "Emmett", "Lorraine", "George", "Biff", "Tohtori", "Jennifer"};
     private static final String[] timeMachines = {"tardis", "deLorean", "aikakone"};
     private static final String[] pets = {"Trevor", "Hedwig", "Nagini", "Koukkujalka", "Hämäkäk", "Kutka", "Posityyhtynen"};
+    private static final String[] variables = {"luku", "arvo", "numero", "muuttuja", "apu"};
 
     
     public static int randomLargePositiveInteger(){
@@ -54,6 +55,10 @@ public class Randomizer {
     
     public static String randomFunctionName() {
         return functions[random.nextInt(functions.length)];
+    }
+    
+    public static String randomVariableName() {
+        return variables[random.nextInt(variables.length)];
     }
     
     public static String randomPassenger() {

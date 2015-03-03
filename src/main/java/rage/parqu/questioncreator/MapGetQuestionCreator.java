@@ -22,6 +22,7 @@ public class MapGetQuestionCreator extends QuestionCreator {
     @Override
     protected void randomizeParameters() {
         numbers = new ArrayList();
+        numberStrings = new ArrayList();
         while (numbers.size() < 3) {
             int newNumber = randomPositiveIntegerFromZero(10);
             if (!numbers.contains(newNumber)) {

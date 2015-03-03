@@ -41,13 +41,14 @@ public class MapGetQuestionCreator extends QuestionCreator {
             scopes.put("number" + (i+1), numbers.get(i));
             scopes.put("numberString" + (i + 1), numberStrings.get(i));
         }
+        scopes.put("number", numbers.get(2 - index));
         return scopes;
     }
 
     @Override
     protected Question setUpQuestionAndAnswers() {
         Question question = new Question();
-        question.setQuestionText("Mikä numero poistetaan listalta?");
+        question.setQuestionText("Millä get komennolla saadaa hajautustaulusta luku" + numbers.get(2 - index) + "?");
         question.setAnswers(setupAnswers());
         return question;
     }

@@ -47,7 +47,7 @@ public class ObjectMapQuestionCreator extends QuestionCreator {
             scopes.put("name" + (i + 1), names.get(i));
             scopes.put("objectName" + (i + 1), names.get(i).toLowerCase());
         }
-        scopes.put("number", ages.get(2 - index));
+        scopes.put("number", ages.get(index));
         return scopes;
     }
 
@@ -69,7 +69,8 @@ public class ObjectMapQuestionCreator extends QuestionCreator {
         
         for (int i = 0; i < ages.size(); i++) {
             answers.add("henkilotaulu.get(\"" + names.get(i) + "\")");
-            answers.add("henkilotaulu.get(\"" + ages.get(i) + "\").getIka()");
+            answers.add("henkilotaulu.get(\"" + names.get(i) + "\").getIka()");
+            answers.add("henkilotaulu.get(" + names.get(i).toLowerCase() + ").getIka()");
         }
         
         return answers;

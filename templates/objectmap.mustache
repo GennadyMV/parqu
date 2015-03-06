@@ -1,11 +1,36 @@
-HashMap<String, Henkilo> henkiloTaulu = new HashMap<>();
+public class Henkilo {
+    
+    private String nimi;
+    private String ika;
 
-Henkilo {{objectName1}} = new Henkilo("{{name1}}", {{age1}});
-Henkilo {{objectName2}} = new Henkilo("{{name2}}", {{age2}});
-Henkilo {{objectName3}} = new Henkilo("{{name3}}", {{age3}});
+    public Henkilo(String nimi, String ika) {
+        this.nimi = nimi;
+        this.ika = ika;
+    }
 
-muutosTaulu.put({{objectName1}}.getName(), {{objectName1}});
-muutosTaulu.put({{objectName2}}.getName(), {{objectName2}});
-muutosTaulu.put({{objectName3}}.getName(), {{objectName3}});
+    public String getNimi() {
+        return nimi;
+    }
 
-System.out.println("Oikein!");
+    public String getIka() {
+        return ika;
+    }
+}
+
+-----------------
+
+public static void main(String[] args) {
+    HashMap<String, Henkilo> henkiloTaulu = new HashMap<>();
+
+    Henkilo {{objectName1}} = new Henkilo("{{name1}}", {{age1}});
+    Henkilo {{objectName2}} = new Henkilo("{{name2}}", {{age2}});
+    Henkilo {{objectName3}} = new Henkilo("{{name3}}", {{age3}});
+
+    muutosTaulu.put({{objectName1}}.getName(), {{objectName1}});
+    muutosTaulu.put({{objectName2}}.getName(), {{objectName2}});
+    muutosTaulu.put({{objectName3}}.getName(), {{objectName3}});
+
+    if(/* get-komento tähän */ == {{number}}) {
+        System.out.println("Oikein!");
+    }
+}

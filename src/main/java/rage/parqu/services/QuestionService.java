@@ -62,6 +62,7 @@ public class QuestionService {
         creators.put(27, new ForBorderQuestionCreator());
         creators.put(28, new BiggestNumberQuestionCreator());
         creators.put(29, new MapGetQuestionCreator());
+        creators.put(30, new ObjectMapQuestionCreator());
     }
 
     public Question createNewQuestion(Integer id, String studentID) {

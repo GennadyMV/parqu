@@ -59,7 +59,7 @@ public class MapGetQuestionCreator extends QuestionCreator {
 
     @Override
     protected String determineRightAnswer() {
-        return "muutostaulu.get(\"" + numberStrings.get(index) + "\")";
+        return "muutostaulu.get(\"" + numberStrings.get(2 - index) + "\")";
     }
 
     private Set<String> setupAnswers() {

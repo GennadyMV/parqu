@@ -72,6 +72,7 @@ public class ObjectMapQuestionCreator extends QuestionCreator {
             answers.add("henkilotaulu.get(\"" + names.get(i) + "\").getIka()");
             answers.add("henkilotaulu.get(" + names.get(i).toLowerCase() + ").getIka()");
         }
+        answers.add("henkilotaulu.get(" + ages.get(index) + ")");
         
         return answers;
     }

@@ -52,8 +52,8 @@ public class MapGetQuestionCreator extends QuestionCreator {
     @Override
     protected Question setUpQuestionAndAnswers() {
         Question question = new Question();
-        question.setQuestionText("Millä get komennolla saadaa hajautustaulusta luku" + numbers.get(2 - index) + "?");
-        question.setAnswers(setupAnswers());
+        question.setQuestionText("Millä get komennolla saadaa hajautustaulusta luku " + numbers.get(2 - index) + "?");
+        question.setAnswers(setupAnswers()); 
         return question;
     }
 

@@ -33,6 +33,9 @@ public class MapGetQuestionCreator extends QuestionCreator {
             numberStrings.add(numbers.get(i));
         }
         index = randomPositiveIntegerFromZero(2);
+        if(numbers.get(index) == numberStrings.get(index)){
+            this.randomizeParameters();
+        }
     }
 
     @Override
@@ -56,7 +59,7 @@ public class MapGetQuestionCreator extends QuestionCreator {
 
     @Override
     protected String determineRightAnswer() {
-        return "muutostaulu.get(" + numberStrings.get(index) + ")";
+        return "muutostaulu.get(\"" + numberStrings.get(index) + "\")";
     }
 
     private Set<String> setupAnswers() {

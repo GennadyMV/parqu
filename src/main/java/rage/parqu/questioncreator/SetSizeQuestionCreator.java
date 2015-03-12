@@ -29,7 +29,7 @@ public class SetSizeQuestionCreator extends QuestionCreator {
             }
         }
         repeats = randomPositiveIntegerFromOne(3);
-        values = randomPositiveIntegerFromZero(3);
+        values = randomPositiveIntegerFromOne(3);
     }
 
     @Override

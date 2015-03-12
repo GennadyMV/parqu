@@ -1,0 +1,37 @@
+public interface Animal {
+
+    public void makeSound();
+}
+
+-----------
+
+public class {{animalName1}} implements Animal {
+    
+    @Override
+    public void makeSound() {
+        System.out.println("{{animalSound1}}!");
+    }
+}
+
+-----------
+
+public class {{animalName2}} implements Animal {
+    
+    @Override
+    public void makeSound() {
+        System.out.println("{{animalSound2}}!");
+    }
+}
+
+-----------
+
+public static void main(String[] args) {
+    ArrayList<Animal> animals = new ArrayList<>();
+    animals.add(new {{animalName1}}());
+    animals.add(new {{animalName2}}());
+    animals.add(new {{animalName1}}());
+    animals.add(new {{animalName2}}());
+    Animal chosenOne = animals.get({{index}});
+    
+    chosenOne.makeSound();
+}

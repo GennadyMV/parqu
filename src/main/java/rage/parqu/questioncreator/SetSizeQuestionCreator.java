@@ -6,7 +6,6 @@ import java.util.List;
 import rage.parqu.abstractquestioncreators.QuestionCreator;
 import rage.parqu.domain.Question;
 import static rage.parqu.util.Randomizer.randomPositiveIntegerFromOne;
-import static rage.parqu.util.Randomizer.randomPositiveIntegerFromZero;
 import static rage.parqu.util.Randomizer.randomString;
 
 public class SetSizeQuestionCreator extends QuestionCreator {
@@ -21,15 +20,17 @@ public class SetSizeQuestionCreator extends QuestionCreator {
 
     @Override
     protected void randomizeParameters() {
+        repeats = randomPositiveIntegerFromOne(3);
+        values = randomPositiveIntegerFromOne(3);
+        if(repeats > values){
+            this.randomizeParameters();
+            return;
+        }
         names = new ArrayList();
         while (names.size() < 3) {
             String newName = randomString();
-            if (!names.contains(newName)) {
-                names.add(newName);
-            }
+            names.add(newName);
         }
-        repeats = randomPositiveIntegerFromOne(3);
-        values = randomPositiveIntegerFromOne(3);
     }
 
     @Override

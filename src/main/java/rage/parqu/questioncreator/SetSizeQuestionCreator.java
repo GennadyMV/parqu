@@ -29,7 +29,9 @@ public class SetSizeQuestionCreator extends QuestionCreator {
         names = new ArrayList();
         while (names.size() < 3) {
             String newName = randomString();
-            names.add(newName);
+            if(!names.contains(newName)){
+                names.add(newName);
+            }
         }
     }
 

@@ -43,16 +43,16 @@ public class AnimalInterfaceQuestionCreator extends QuestionCreator {
     protected Question setUpQuestionAndAnswers() {
         Question question = new Question();
         question.setQuestionText("Mitä tulostetaan?");
-        question.setAnswers("Ohjelma ei tulosta mitään", animalSoundPair1.getValue(), animalSoundPair2.getValue());
+        question.setAnswers("Ohjelma ei tulosta mitään", animalSoundPair1.getValue() + "!", animalSoundPair2.getValue() + "!");
         return question;       
     }
 
     @Override
     protected String determineRightAnswer() {
         if(index % 2 == 0){
-            return animalSoundPair2.getValue();
+            return animalSoundPair1.getValue() + "!";
         } else {
-            return animalSoundPair1.getValue();
+            return animalSoundPair2.getValue() + "!";
         }
     }
 

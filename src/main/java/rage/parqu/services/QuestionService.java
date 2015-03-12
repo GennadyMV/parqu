@@ -64,6 +64,7 @@ public class QuestionService {
         creators.put(29, new MapGetQuestionCreator());
         creators.put(30, new ObjectMapQuestionCreator());
         creators.put(31, new AnimalInterfaceQuestionCreator());
+        creators.put(32, new SetSizeQuestionCreator());
     }
 
     public Question createNewQuestion(Integer id, String studentID) {

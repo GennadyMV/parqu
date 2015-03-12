@@ -1,0 +1,21 @@
+HashSet<String> tutkijat = new Set<>();
+
+{{#repeat1}}
+tutkijat.add("{{name1}}");
+{{/repeat1}}
+{{#name1}}
+tutkijat.add("{{name1}}");
+{{/name1}}
+{{#repeat2}}
+tutkijat.add("{{name2}}");
+{{/repeat2}}
+{{#name2}}
+tutkijat.add("{{name2}}");
+{{/name2}}
+{{#repeat3}}
+tutkijat.add("{{name3}}");
+{{/repeat3}}
+{{#name3}}
+tutkijat.add("{{nam31}}");
+{{/name3}}
+System.out.println(tutkijat.size());

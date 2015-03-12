@@ -22,9 +22,9 @@ public class SetSizeQuestionCreator extends QuestionCreator {
     protected void randomizeParameters() {
         repeats = randomPositiveIntegerFromOne(3);
         values = randomPositiveIntegerFromOne(3);
-        if(repeats > values){
-            this.randomizeParameters();
-            return;
+        while(repeats > values){
+            repeats = randomPositiveIntegerFromOne(3);
+            values = randomPositiveIntegerFromOne(3);
         }
         names = new ArrayList();
         while (names.size() < 3) {
@@ -36,10 +36,10 @@ public class SetSizeQuestionCreator extends QuestionCreator {
     @Override
     protected HashMap<String, Object> setUpScope() {
         HashMap<String, Object> scopes = new HashMap<>();
-        for (int i = 1; i <= repeats; i++) {
+        for (int i = 1; i <= values; i++) {
             scopes.put("name" + i, names.get(i-1));        
         }
-        for (int i = 1; i <= values; i++) {
+        for (int i = 1; i <= repeats; i++) {
             scopes.put("repeat" + i, names.get(i-1));                    
         }
         return scopes;

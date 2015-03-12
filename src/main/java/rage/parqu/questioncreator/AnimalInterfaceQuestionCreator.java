@@ -55,9 +55,5 @@ public class AnimalInterfaceQuestionCreator extends QuestionCreator {
             return animalSoundPair2.getValue() + "!";
         }
     }
-
-    private int randomIntegerInclusive(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     
 }

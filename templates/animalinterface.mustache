@@ -26,12 +26,12 @@ public class {{animalName2}} implements Animal {
 -----------
 
 public static void main(String[] args) {
-    ArrayList<Animal> animals = new ArrayList<>();
-    animals.add(new {{animalName1}}());
-    animals.add(new {{animalName2}}());
-    animals.add(new {{animalName1}}());
-    animals.add(new {{animalName2}}());
-    Animal chosenOne = animals.get({{index}});
+    ArrayList<Animal> farm = new ArrayList<>();
+    farm.add(new {{animalName1}}());
+    farm.add(new {{animalName2}}());
+    farm.add(new {{animalName1}}());
+    farm.add(new {{animalName2}}());
+    Animal chosenOne = farm.get({{index}});
     
     chosenOne.makeSound();
 }

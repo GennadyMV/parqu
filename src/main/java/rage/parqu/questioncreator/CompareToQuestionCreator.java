@@ -43,8 +43,8 @@ public class CompareToQuestionCreator extends QuestionCreator{
         answers.add("this.sivuMaara + " + objectName + ".sivuMaara");
         answers.add("this.sivuMaara < " + objectName + ".sivuMaara");
         answers.add("this.sivuMaara > " + objectName + ".sivuMaara");
-        answers.add(objectName + ".sivuMaara -" + "this.sivuMaara");
-        answers.add(objectName + ".sivuMaara +" + "this.sivuMaara");
+        answers.add(objectName + ".sivuMaara - " + "this.sivuMaara");
+        answers.add(objectName + ".sivuMaara + " + "this.sivuMaara");
 
         return answers;
     }

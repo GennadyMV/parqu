@@ -16,6 +16,7 @@ public class Randomizer {
     private static final String[] pets = {"Trevor", "Hedwig", "Nagini", "Koukkujalka", "Hämäkäk", "Kutka", "Posityyhtynen"};
     private static final String[] variables = {"luku", "arvo", "numero", "muuttuja", "apu"};
     private static final Map<String, String> animalSounds = ImmutableMap.of("Horse", "Neigh", "Dog", "Woof", "Pig", "Oink", "Sheep", "Baa", "Frog", "Ribbit");
+    private static final String[] bookObjects = {"book", "object", "o", "b", "obj"};
 
     public static int randomLargePositiveInteger() {
         return 1 + random.nextInt(100);
@@ -56,6 +57,10 @@ public class Randomizer {
 
     public static String randomString() {
         return strings[random.nextInt(strings.length)];
+    }
+    
+    public static String randomBookObject() {
+        return bookObjects[random.nextInt(bookObjects.length)];
     }
 
     public static String randomFunctionName() {

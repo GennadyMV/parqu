@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Set;
 import rage.parqu.abstractquestioncreators.QuestionCreator;
 import rage.parqu.domain.Question;
+import static rage.parqu.util.Randomizer.randomBookName;
 import static rage.parqu.util.Randomizer.randomGenre;
 import static rage.parqu.util.Randomizer.randomPositiveIntegerFromZero;
 
@@ -40,7 +41,7 @@ public class ObjectsInMultipleStructuresQuestionCreator extends QuestionCreator 
             }
         }
         while (bookNames.size() < 2) {
-            String newName = randomGenre();
+            String newName = randomBookName();
             if (!bookNames.contains(newName)) {
                 bookNames.add(newName);
             }

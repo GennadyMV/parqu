@@ -39,8 +39,12 @@ public class ObjectsInMultipleStructuresQuestionCreator extends QuestionCreator 
                 genres.add(newName);
             }
         }
-        bookNames.add("Pride and Prejudice");
-        bookNames.add("Catch-22");
+        while (bookNames.size() < 2) {
+            String newName = randomGenre();
+            if (!bookNames.contains(newName)) {
+                bookNames.add(newName);
+            }
+        }
     }
 
     @Override

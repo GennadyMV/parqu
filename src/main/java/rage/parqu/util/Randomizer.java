@@ -17,8 +17,9 @@ public class Randomizer {
     private static final String[] variables = {"luku", "arvo", "numero", "muuttuja", "apu"};
     private static final Map<String, String> animalSounds = ImmutableMap.of("Horse", "Neigh", "Dog", "Woof", "Pig", "Oink", "Sheep", "Baa", "Frog", "Ribbit");
     private static final String[] bookObjects = {"book", "object", "o", "b", "obj", "kirja", "k"};
-    private static final String[] genres = {"Jännitys", "Romantiikka", "Lastenkirja", "Tieto"};
-
+    private static final String[] genres = {"Jännitys", "Romantiikka", "Lastenkirja", "Tieto", "Äänikirja"};
+    private static final String[] bookNames = {"Catch-22", "1984", "Fahrenheit 451", "Tuntematon Sotilas", "Kalevala"};
+    
     public static int randomLargePositiveInteger() {
         return 1 + random.nextInt(100);
     }
@@ -68,6 +69,10 @@ public class Randomizer {
         return bookObjects[random.nextInt(bookObjects.length)];
     }
 
+    public static String randomBookName() {
+        return bookNames[random.nextInt(bookNames.length)];
+    }
+    
     public static String randomFunctionName() {
         return functions[random.nextInt(functions.length)];
     }

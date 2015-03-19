@@ -1,0 +1,66 @@
+public class Kirja{
+    
+    private String kirjanNimi;
+    private int ISBN;
+    private String genre;
+
+    public Kirja(String kirjanNimi, int ISBN, String genre) {
+        this.kirjanNimi = kirjanNimi;
+        this.ISBN = ISBN;
+        this.genre = genre;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public int getISBN() {
+        return ISBN;
+    }
+    
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+}
+
+---------------------
+
+public class Kirjasto {
+    private Map<Integer, Kirja> kirjaIsbnNumeronPerusteella;
+    private Map<String, List<Kirja>> kirjatGenrenPerusteella;
+
+    public Kirjasto() {
+        this.kirjaIsbnNumeronPerusteella = new HashMap<>();
+        this.kirjatGenrenPerusteella = new HashMap<>();
+    }
+
+    public void lisaaKirjaKokoelmaan(Kirja uusiKirja) {
+        kirjaIsbnNumeronPerusteella.put(uusiKirja.getISBN(), uusiKirja);
+
+        if(!kirjatGenrenPerusteella.containsKey(uusiKirja.getGenre())) {
+            this.kirjatGenrenPerusteella.put(uusiKirja.getGenre(), new ArrayList<Kirja>());
+        }
+
+        kirjatGenrenPerusteella.get(uusiKirja.getGenre()).add(uusiKirja);
+    }
+
+    public void vaihdaKirjanGenre(int isbn, String uusiGenre){
+        kirjaIsbnNumeronPerusteella.get(isbn).setGenre(uusiGenre);
+    }
+    
+    public List<Kirja> haeKirjatGenrenPerusteella(String genre){
+        return kirjatGenrenPerusteella.get(genre);
+    }
+}
+
+---------------------
+
+public static void main(String[] args) {
+    Kirjasto kirjasto = new Kirjasto();
+    Kirja kirja = new Kirja({{bookName1}}, {{identifier1}}, "{{genre1}}");
+    Kirja tokaKirja = new Kirja({{bookName2}}, {{identifier2}}, "{{genre2}}");
+
+    kirjasto.lisaaKirjaKokoelmaan(kirja);
+    kirjasto.vaihdaKirjanGenre({{identifier1}}, "{{genre2}}");
+    kirjasto.haeKirjatGenrenPerusteella("Parametri tähän");
+}

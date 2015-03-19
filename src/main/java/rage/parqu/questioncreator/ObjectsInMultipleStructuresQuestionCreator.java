@@ -25,6 +25,8 @@ public class ObjectsInMultipleStructuresQuestionCreator extends QuestionCreator 
     protected void randomizeParameters() {
         IDs = new ArrayList();
         genres = new ArrayList();
+        genres = new ArrayList();
+        bookNames = new ArrayList();
         while (IDs.size() < 2) {
             int newNumber = randomPositiveIntegerFromZero(60);
             if (!IDs.contains(newNumber)) {

@@ -66,7 +66,7 @@ public class QuestionService {
         creators.put(31, new AnimalInterfaceQuestionCreator());
         creators.put(32, new SetSizeQuestionCreator());
         creators.put(33, new CompareToQuestionCreator());
-        creators.put(33, new ObjectsInMultipleStructuresQuestionCreator());
+        creators.put(34, new ObjectsInMultipleStructuresQuestionCreator());
 
     }
 

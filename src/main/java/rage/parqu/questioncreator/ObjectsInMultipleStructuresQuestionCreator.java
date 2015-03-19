@@ -62,7 +62,7 @@ public class ObjectsInMultipleStructuresQuestionCreator extends QuestionCreator 
     @Override
     protected Question setUpQuestionAndAnswers() {
         Question question = new Question();
-        question.setQuestionText("Millä genresanalla kirja " + bookNames.get(0) + " löytyy hajautustaulusta?");
+        question.setQuestionText("Millä hakusanalla kirja " + bookNames.get(0) + " löytyy hajautustaulusta?");
         question.setAnswers(setupAnswers()); 
         return question;
     }
@@ -78,6 +78,7 @@ public class ObjectsInMultipleStructuresQuestionCreator extends QuestionCreator 
         for (int i = 0; i < genres.size(); i++) {
             answers.add(genres.get(i));
             answers.add(bookNames.get(i));
+            answers.add(IDs.get(i).toString());
         }
         answers.add("Ei millään");
         

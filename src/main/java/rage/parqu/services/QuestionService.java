@@ -83,7 +83,7 @@ public class QuestionService {
     @Transactional
     public boolean checkAndSave(CheckRequest check) {
         cleanupCounter++;
-        if(cleanupCounter > 10){
+        if(cleanupCounter > 1000){
             removeUnansweredQuestions();
             cleanupCounter = 0;
         }
@@ -118,7 +118,7 @@ public class QuestionService {
     private boolean questionIsOld(DateTime timeStamp, DateTime now) {
         Hours hours = Hours.hoursBetween(timeStamp, now);
         
-        return hours.getHours() > 24;
+        return hours.getHours() > 72;
     }
 
     public HashMap<Integer, QuestionCreator> getCreators() {

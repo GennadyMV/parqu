@@ -1,0 +1,45 @@
+public class Henkilo {
+    private String nimi;
+    private int ika;
+
+    public Henkilo(String nimi, int ika) {
+        this.nimi = nimi;
+        this.ika = ika;
+    }
+
+    @Override
+    public String toString() {
+        return nimi + " (" + ika + " vuotta) ";
+    }
+}
+
+------------------
+
+public class Opiskelija extends Henkilo {
+
+    private int opintopisteet;
+
+    public Opiskelija(String nimi, int ika, int opintopisteet) {
+        super(nimi, ika);
+        this.opintopisteet = opintopisteet;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + opintopisteet + " op";
+    }
+
+}
+
+-------------------
+
+public static void main(String[] args) {
+    Opiskelija opiskelija = new Opiskelija({{name}}, {{age}}, {{credits}});
+
+    Henkilo henkilo = opiskelija;
+    Object object = opiskelija;
+
+    System.out.print(opiskelija.toString() + ", ");
+    System.out.print(henkilo.toString() + ", ");
+    System.out.println(object.toString());
+}

@@ -67,7 +67,7 @@ public class QuestionService {
         creators.put(32, new SetSizeQuestionCreator());
         creators.put(33, new CompareToQuestionCreator());
         creators.put(34, new ObjectsInMultipleStructuresQuestionCreator());
-
+        creators.put(35, new PolymorphismQuestionCreator());
     }
 
     public Question createNewQuestion(Integer id, String studentID) {

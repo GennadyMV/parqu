@@ -1,0 +1,33 @@
+public class Laskin {
+
+    public int lisaaLukuun(int luku){
+        return luku + 1;
+    }
+    
+    public int vahennaLuvusta(int luku){
+        return luku - 1;
+    }
+}
+
+----------------------
+
+public class SuperLaskin extends Laskin{
+
+    @Override
+    public int lisaaLukuun(int luku){
+        return luku + {{first}};
+    }
+    
+}
+
+----------------------
+
+public static void main(String[] args) {
+    Laskin laskin = new Laskin();
+    Laskin superLaskin = new SuperLaskin();
+    int luku = {{value}};
+    luku = superLaskin.vahennaLuvusta(luku);
+    luku = superLaskin.lisaaLukuun(luku);
+    luku = laskin.lisaaLukuun(luku);
+    System.out.println(luku);
+}

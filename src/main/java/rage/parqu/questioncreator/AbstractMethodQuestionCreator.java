@@ -26,10 +26,7 @@ public class AbstractMethodQuestionCreator extends QuestionCreator {
     protected void randomizeParameters() {
         functionsImplemented = randomPositiveIntegerFromZero(2);
         functionsToImplement = functionsImplemented + randomPositiveIntegerFromZero(5);
-        
-        System.out.println("Implemented" + functionsImplemented);
-        System.out.println("To Implement" + functionsToImplement);
-
+       
         functionNames = new ArrayList<>();
         while(functionNames.size() < functionsToImplement){
             String newName = randomFunctionName();
@@ -40,14 +37,18 @@ public class AbstractMethodQuestionCreator extends QuestionCreator {
         functionsInAbstract = new ArrayList<>();
         functionsInClass = new ArrayList<>();
 
+        for (String name : functionNames) {
+            functionsInAbstract.add(new Function(name));
+        }
+
         int i = 0;
         for (String name : functionNames) {
-            if(i < functionsImplemented){
-                functionsInClass.add(new Function(name));
-            }
-            functionsInAbstract.add(new Function(name));
-            i++;
+            if(i >= functionsImplemented){
+                break;
+            }            
+            functionsInClass.add(new Function(name));
         }
+        i++;
     }
 
     @Override

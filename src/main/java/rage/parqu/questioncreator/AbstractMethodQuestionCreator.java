@@ -24,10 +24,12 @@ public class AbstractMethodQuestionCreator extends QuestionCreator {
 
     @Override
     protected void randomizeParameters() {
-        while(functionsImplemented + functionsToImplement == 0){
-            functionsImplemented = randomPositiveIntegerFromZero(2);
-            functionsToImplement = functionsImplemented + randomPositiveIntegerFromZero(4);
-        }
+        functionsImplemented = randomPositiveIntegerFromZero(2);
+        functionsToImplement = functionsImplemented + randomPositiveIntegerFromZero(5);
+        
+        System.out.println("Implemented" + functionsImplemented);
+        System.out.println("To Implement" + functionsToImplement);
+
         functionNames = new ArrayList<>();
         while(functionNames.size() < functionsToImplement){
             String newName = randomFunctionName();

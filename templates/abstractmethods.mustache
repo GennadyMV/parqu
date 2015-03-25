@@ -3,11 +3,12 @@ public abstract class JatkoOpiskelija {
     {{#abstractfunctions}}
     public abstract void {{name}}();
     {{/abstractfunctions}}
+
 }
 
 -------------------
 
-public abstract class Opiskelija extends JatkoOpiskelija {
+public class Opiskelija extends JatkoOpiskelija {
 
     private int opintopisteet;
 

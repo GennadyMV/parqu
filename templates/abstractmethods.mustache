@@ -1,4 +1,10 @@
-public abstract class JatkoOpiskelija {
+public abstract class Opiskelija {
+
+    private int opintopisteet;
+
+    public Opiskelija(int opintopisteet) {
+        this.opintopisteet = opintopisteet;
+    }
 
     {{#abstractfunctions}}
     public abstract void {{name}}();
@@ -8,13 +14,7 @@ public abstract class JatkoOpiskelija {
 
 -------------------
 
-public class Opiskelija extends JatkoOpiskelija {
-
-    private int opintopisteet;
-
-    public Opiskelija(int opintopisteet) {
-        this.opintopisteet = opintopisteet;
-    }
+public class Fuksi extends Opiskelija {
 
     {{#implementedfunctions}}
     @Override

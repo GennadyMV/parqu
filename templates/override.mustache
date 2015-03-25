@@ -1,20 +1,20 @@
 public class Laskin {
 
-    public int lisaaLukuun(int luku){
+    public int lisaaLukuun(int luku) {
         return luku + 1;
     }
     
-    public int vahennaLuvusta(int luku){
+    public int vahennaLuvusta(int luku) {
         return luku - 1;
     }
 }
 
 ----------------------
 
-public class SuperLaskin extends Laskin{
+public class SuperLaskin extends Laskin {
 
     @Override
-    public int lisaaLukuun(int luku){
+    public int lisaaLukuun(int luku) {
         return luku + {{first}};
     }
     

@@ -1,6 +1,7 @@
 package rage.parqu.questioncreator;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import rage.parqu.abstractquestioncreators.QuestionCreator;
@@ -42,12 +43,13 @@ public class AbstractMethodQuestionCreator extends QuestionCreator {
         }
 
         int i = 0;
+        Collections.shuffle(functionNames);
         for (String name : functionNames) {
             if(i >= functionsImplemented){
                 break;
             }            
             functionsInClass.add(new Function(name));
-            i++;
+             i++;
         }
     }
 

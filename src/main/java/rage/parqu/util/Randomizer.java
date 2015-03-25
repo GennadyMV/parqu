@@ -10,7 +10,7 @@ public class Randomizer {
 
     private static final Random random = new Random();
     private static final String[] strings = {"Matti", "Arto", "Leo", "Joni", "Mika", "Lassi", "Kasper", "Kenny"};
-    private static final String[] functions = {"opiskele", "juhli", "nuku", "syo", "liiku", "pelaa"};
+    private static final String[] functions = {"opiskele", "juhli", "nuku", "syo", "liiku", "pelaa", "tutki", "lue"};
     private static final String[] passengers = {"Marty", "Emmett", "Lorraine", "George", "Biff", "Tohtori", "Jennifer"};
     private static final String[] timeMachines = {"tardis", "deLorean", "aikakone"};
     private static final String[] pets = {"Trevor", "Hedwig", "Nagini", "Koukkujalka", "Hämäkäk", "Kutka", "Posityyhtynen"};

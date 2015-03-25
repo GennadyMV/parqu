@@ -61,7 +61,7 @@ public class AbstractMethodQuestionCreator extends QuestionCreator {
     @Override
     protected Question setUpQuestionAndAnswers() {
         Question question = new Question();
-        question.setQuestionText("Kuinka monta metodia luokan täytyy toteuttaa?");
+        question.setQuestionText("Kuinka monta metodia luokan Opiskelija täytyy toteuttaa?");
         question.setAnswers(0 + "", 1 + "", 2 + "", 3+ "", 4 + "", 5 + "", 6 + "");
         return question;
     }

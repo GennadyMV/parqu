@@ -2,7 +2,6 @@ public abstract class JatkoOpiskelija {
 
     {{#abstractfunctions}}
     public abstract void {{name}}();
-
     {{/abstractfunctions}}
 }
 
@@ -17,8 +16,10 @@ public abstract class Opiskelija extends JatkoOpiskelija {
     }
 
     {{#implementedfunctions}}
+    @Override
     public void {{name}}(){
         System.out.println("{{name}}n!");
     }
+
     {{/implementedfunctions}}
 }

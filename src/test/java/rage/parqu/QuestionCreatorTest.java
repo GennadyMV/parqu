@@ -1,5 +1,7 @@
 package rage.parqu;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map.Entry;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -88,6 +90,21 @@ public class QuestionCreatorTest {
     private boolean parametersAreInTheCode(Question question) {
         for (Object object : question.getParameters()) {
             if (!question.getCode().contains(object.toString())) {
+                if(object instanceof List){
+                    if(listObjectsAreInTheCode(object, question)){
+                        continue;
+                    }
+                }
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private boolean listObjectsAreInTheCode(Object object, Question question) {
+        List<Object> objects = (List<Object>) object;
+        for (Object object1 : objects) {
+            if (!question.getCode().contains(object1.toString())) {
                 return false;
             }
         }

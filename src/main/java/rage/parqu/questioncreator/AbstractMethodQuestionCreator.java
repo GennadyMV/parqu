@@ -47,8 +47,8 @@ public class AbstractMethodQuestionCreator extends QuestionCreator {
                 break;
             }            
             functionsInClass.add(new Function(name));
+            i++;
         }
-        i++;
     }
 
     @Override

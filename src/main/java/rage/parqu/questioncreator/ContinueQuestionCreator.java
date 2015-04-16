@@ -32,7 +32,7 @@ public class ContinueQuestionCreator extends TwoValueQuestionCreator {
     @Override
     protected String determineRightAnswer() {
         int count = 0;
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < startingValue; i++) {
             if(i % firstModifier != 0 ){
                 count++;
             }

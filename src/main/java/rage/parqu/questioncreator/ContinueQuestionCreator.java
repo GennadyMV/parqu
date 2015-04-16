@@ -14,7 +14,7 @@ public class ContinueQuestionCreator extends TwoValueQuestionCreator {
     @Override
     protected void randomizeParameters() {
         super.randomizeParameters();
-        if (firstModifier < startingValue) {
+        if (firstModifier > startingValue) {
             int temp = startingValue;
             startingValue = firstModifier;
             firstModifier = temp;
@@ -31,7 +31,13 @@ public class ContinueQuestionCreator extends TwoValueQuestionCreator {
 
     @Override
     protected String determineRightAnswer() {
-        return "" + (firstModifier - startingValue);
+        int count = 0;
+        for (int i = 0; i < 10; i++) {
+            if(i % firstModifier != 0 ){
+                count++;
+            }
+        }
+        return "" + count;
     }
 
     private Set<String> buildAnswers() {

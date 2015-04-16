@@ -26,6 +26,7 @@ public abstract class QuestionCreator {
         question.setCode(writer.getBuffer().toString());
         question.setCorrectAnswer(determineRightAnswer());
         question.setParameters(scopes.values().toArray());
+        addNote(question);
         
         return question;
     }
@@ -41,5 +42,8 @@ public abstract class QuestionCreator {
 
     protected void setTemplateName(String templateName) {
         this.templateName = templateName;
+    }
+
+    protected void addNote(Question question) {
     }
 }

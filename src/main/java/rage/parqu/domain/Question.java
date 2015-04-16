@@ -19,6 +19,7 @@ public class Question {
     private Object[] parameters;
     @JsonIgnore
     private final DateTime timeStamp;
+    private String note;
 
     public Question() {
         this.answerID = UUID.randomUUID();
@@ -79,5 +80,13 @@ public class Question {
 
     public DateTime getTimeStamp() {
         return timeStamp;
+    }
+    
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
     }
 }

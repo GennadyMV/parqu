@@ -70,6 +70,7 @@ public class QuestionService {
         creators.put(35, new PolymorphismQuestionCreator());
         creators.put(36, new AbstractMethodQuestionCreator());
         creators.put(37, new OverrideQuestionCreator());
+        creators.put(38, new ContinueQuestionCreator());
     }
 
     public Question createNewQuestion(Integer id, String studentID) {

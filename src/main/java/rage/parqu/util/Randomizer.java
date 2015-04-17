@@ -19,7 +19,7 @@ public class Randomizer {
     private static final String[] bookObjects = {"book", "object", "o", "b", "obj", "kirja", "k"};
     private static final String[] genres = {"Jannitys", "Romantiikka", "Lastenkirja", "Tieto", "Aanikirja", "Historia", "Elamakerta"};
     private static final String[] bookNames = {"Catch-22", "1984", "Fahrenheit 451", "Tuntematon Sotilas", "Kalevala"};
-    private static final String[] regexes = {"ab?", "(ab)+", "a+", "ab+a", "ab+", "(a|b){1}", "a?b+", "(a|b){5}", "bb", "(a|b){6}", "(a|b){8,10}", "ab(ba)+", "b(ab)+", "a?(bbb)+", "((a){3,7}|(b){3,7})"};
+    private static final String[] regexes = {"ab?", "(ab)+", "a+", "ab+a", "ab+", "(a|b){1}", "(a|b){5}", "bb" , "a?bb", "(a|b){6}", "(a|b){8,10}", "ab(ba)+", "b(ab)+", "a?(bbb)+"};
 
     
     public static int randomLargePositiveInteger() {

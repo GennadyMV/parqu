@@ -17,8 +17,10 @@ public class Randomizer {
     private static final String[] variables = {"luku", "arvo", "numero", "muuttuja", "apu"};
     private static final Map<String, String> animalSounds = ImmutableMap.of("Horse", "Neigh", "Dog", "Woof", "Pig", "Oink", "Sheep", "Baa", "Frog", "Ribbit");
     private static final String[] bookObjects = {"book", "object", "o", "b", "obj", "kirja", "k"};
-    private static final String[] genres = {"Jännitys", "Romantiikka", "Lastenkirja", "Tieto", "Äänikirja"};
+    private static final String[] genres = {"Jannitys", "Romantiikka", "Lastenkirja", "Tieto", "Aanikirja", "Historia", "Elamakerta"};
     private static final String[] bookNames = {"Catch-22", "1984", "Fahrenheit 451", "Tuntematon Sotilas", "Kalevala"};
+    private static final String[] regexes = {"ab?", "(ab)+", "a+", "ab+a", "ab+", "(a|b){1}", "a?b+", "(a|b){5}", "bb", "(a|b){6}", "(a|b){8,10}", "ab(ba)+", "b(ab)+", "a?(bbb)+", "((a){3,7}|(b){3,7})"};
+
     
     public static int randomLargePositiveInteger() {
         return 1 + random.nextInt(100);
@@ -96,6 +98,10 @@ public class Randomizer {
     public static Entry<String, String> randomAnimalSoundPair() {
         return randomEntry(animalSounds.entrySet());
     }
+    
+    public static String randomRegex() {
+        return regexes[random.nextInt(regexes.length)];
+    }    
 
     public static int positiveOrNegative() {
         if (random.nextBoolean()) {

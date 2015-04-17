@@ -27,9 +27,6 @@ public class EnumsQuestionCreator extends QuestionCreator {
     protected HashMap<String, Object> setUpScope() {
         HashMap<String, Object> scopes = new HashMap<>();
 
-        scopes.put("genre", genre);
-        scopes.put("amount", amount);
-        
         return scopes;
     }
 
@@ -48,7 +45,7 @@ public class EnumsQuestionCreator extends QuestionCreator {
 
     private Set<String> setupAnswers() {
         Set<String> answers = new HashSet<>();
-        
+
         answers.add("kirjojenMaarat.put" + "(Genre." + genre +", " + amount + ");");
         answers.add("kirjojenMaarat.put" + "(genre." + genre +", " + amount + ");");
         answers.add("kirjojenMaarat.put" + "(" + genre +", " + amount + ");");

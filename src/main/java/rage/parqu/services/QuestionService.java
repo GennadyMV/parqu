@@ -72,6 +72,7 @@ public class QuestionService {
         creators.put(37, new OverrideQuestionCreator());
         creators.put(38, new ContinueQuestionCreator());
         creators.put(39, new EnumsQuestionCreator());
+        creators.put(40, new MatchRegexQuestionCreator());
     }
 
     public Question createNewQuestion(Integer id, String studentID) {

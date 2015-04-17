@@ -50,7 +50,7 @@ public class ContinueQuestionCreator extends TwoValueQuestionCreator {
     
     @Override
     protected void addNote(Question question){
-        question.setNote("Muistatko vielä <a target=\"_blank\" href=\"http://www.cs.helsinki.fi/group/java/k15-materiaali/viikko1/#6.8-jakojaannos\">%-merkinnän</a>?");
+        question.setNote("Muistathan vielä <a target=\"_blank\" href=\"http://www.cs.helsinki.fi/group/java/k15-materiaali/viikko1/#6.8-jakojaannos\">%-merkinnän</a>?");
     }
 
 }

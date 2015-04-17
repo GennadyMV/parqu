@@ -71,6 +71,7 @@ public class QuestionService {
         creators.put(36, new AbstractMethodQuestionCreator());
         creators.put(37, new OverrideQuestionCreator());
         creators.put(38, new ContinueQuestionCreator());
+        creators.put(39, new EnumsQuestionCreator());
     }
 
     public Question createNewQuestion(Integer id, String studentID) {

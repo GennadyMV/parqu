@@ -12,8 +12,8 @@ public class AnimalInterfaceQuestionCreator extends QuestionCreator {
     private int index;
     private Entry<String, String> animalSoundPair1;
     private Entry<String, String> animalSoundPair2;
-    
-    public  AnimalInterfaceQuestionCreator() {
+
+    public AnimalInterfaceQuestionCreator() {
         super.setTemplateName("animalinterface.mustache");
     }
 
@@ -21,7 +21,7 @@ public class AnimalInterfaceQuestionCreator extends QuestionCreator {
     protected void randomizeParameters() {
         animalSoundPair1 = randomAnimalSoundPair();
         animalSoundPair2 = randomAnimalSoundPair();
-        if(animalSoundPair1.getKey().equals(animalSoundPair2.getKey())){
+        if (animalSoundPair1.getKey().equals(animalSoundPair2.getKey())) {
             this.randomizeParameters();
         }
         index = randomPositiveIntegerFromZero(3);
@@ -35,8 +35,8 @@ public class AnimalInterfaceQuestionCreator extends QuestionCreator {
         scopes.put("animalName2", animalSoundPair2.getKey());
         scopes.put("animalSound1", animalSoundPair1.getValue());
         scopes.put("animalSound2", animalSoundPair2.getValue());
-        
-        return scopes;    
+
+        return scopes;
     }
 
     @Override
@@ -44,16 +44,16 @@ public class AnimalInterfaceQuestionCreator extends QuestionCreator {
         Question question = new Question();
         question.setQuestionText("Mitä tulostetaan?");
         question.setAnswers("Ohjelma ei tulosta mitään", animalSoundPair1.getValue() + "!", animalSoundPair2.getValue() + "!");
-        return question;       
+        return question;
     }
 
     @Override
     protected String determineRightAnswer() {
-        if(index % 2 == 0){
+        if (index % 2 == 0) {
             return animalSoundPair1.getValue() + "!";
         } else {
             return animalSoundPair2.getValue() + "!";
         }
     }
-    
+
 }
